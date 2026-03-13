@@ -11,6 +11,9 @@ paginate: 10
 paginate_path: "/page:num/"
 header_pages:
   - about.md
+  - geopolitics.md
+  - conflict.md
+  - history.md
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
