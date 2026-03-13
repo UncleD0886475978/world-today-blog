@@ -3,7 +3,9 @@ description: "History, Geopolitics & Current Affairs — Updated Daily"
 author: "The World Today Editorial"
 url: "https://UncleD0886475978.github.io"
 baseurl: "/world-today-blog"
-remote_theme: minima
+theme: minima
+minima:
+  skin: auto
 show_excerpts: true
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
@@ -18,4 +20,3 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
-  - jekyll-remote-theme
