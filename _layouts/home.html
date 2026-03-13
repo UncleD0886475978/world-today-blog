@@ -1,0 +1,73 @@
+---
+layout: default
+---
+<style>
+  .site-header { background: #1a1a2e !important; border-bottom: 3px solid #e74c3c; }
+  .site-header a, .site-title, .site-nav a { color: #ffffff !important; }
+  .site-title { font-size: 1.6em !important; font-weight: 900 !important; letter-spacing: 2px; }
+  .hero { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; padding: 40px 20px; text-align: center; margin-bottom: 30px; }
+  .hero p { font-size: 1em; opacity: 0.75; margin: 6px 0 0 0; }
+  .post-list { max-width: 860px; margin: 0 auto; padding: 0 20px 40px; }
+  .post-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+  .post-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  .post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+  .post-category { color: white; font-size: 0.68em; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
+  .cat-geo      { background: #2980b9; }
+  .cat-conflict { background: #e74c3c; }
+  .cat-history  { background: #8e44ad; }
+  .cat-default  { background: #27ae60; }
+  .post-timestamp { color: #999; font-size: 0.8em; }
+  .post-title { font-size: 1.2em; font-weight: 700; margin: 0 0 8px 0; line-height: 1.4; }
+  .post-title a { color: #1a1a2e; text-decoration: none; }
+  .post-title a:hover { color: #e74c3c; }
+  .post-excerpt { color: #666; font-size: 0.9em; line-height: 1.6; margin: 0; }
+  .read-more { display: inline-block; margin-top: 10px; color: #2980b9; font-size: 0.85em; font-weight: 600; text-decoration: none; }
+  .read-more:hover { color: #e74c3c; }
+  body { background: #f5f6fa; }
+  .page-content { padding-top: 0 !important; }
+</style>
+
+<div class="hero">
+  <p>History · Geopolitics · Current Affairs — Published Daily</p>
+</div>
+
+<div class="post-list">
+  {% for post in paginator.posts %}
+    {% assign cat = post.categories[0] | downcase %}
+    <div class="post-card">
+      <div class="post-meta">
+        {% if cat contains "geopolit" %}
+          <span class="post-category cat-geo">{{ post.categories[0] }}</span>
+        {% elsif cat contains "history" %}
+          <span class="post-category cat-history">{{ post.categories[0] }}</span>
+        {% elsif cat contains "conflict" %}
+          <span class="post-category cat-conflict">{{ post.categories[0] }}</span>
+        {% else %}
+          <span class="post-category cat-default">{{ post.categories[0] }}</span>
+        {% endif %}
+        <span class="post-timestamp">🕐 {{ post.date | date: "%B %d, %Y · %I:%M %p UTC" }}</span>
+      </div>
+      <div class="post-title">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </div>
+      {% if post.description %}
+        <p class="post-excerpt">{{ post.description }}</p>
+      {% elsif post.excerpt %}
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
+      {% endif %}
+      <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Read full article →</a>
+    </div>
+  {% endfor %}
+
+  {% if paginator.total_pages > 1 %}
+    <div style="text-align:center; margin: 30px 0; color: #888;">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" style="margin: 0 12px; color: #2980b9;">← Newer</a>
+      {% endif %}
+      Page {{ paginator.page }} of {{ paginator.total_pages }}
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" style="margin: 0 12px; color: #2980b9;">Older →</a>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
