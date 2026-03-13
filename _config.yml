@@ -1,17 +1,19 @@
-title: The World Today
-description: Independent analysis of global events, conflicts, and history.
+title: "The World Today"
+description: "The World Today — Independent Global Journalism"
 url: "https://UncleD0886475978.github.io"
 baseurl: "/world-today-blog"
-
-author: The World Today Editorial
-
-theme: minima
+author: "The World Today Editorial"
+timezone: UTC
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
-permalink: /:year/:month/:day/:title/
-
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - terraform/
 defaults:
   - scope:
       path: ""

@@ -1,0 +1,20 @@
+# Terraform secret values — never commit
+terraform.tfvars
+*.tfvars
+!*.tfvars.template
+
+# Terraform state — contains sensitive data
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Logs
+logs/
+
+# Python
+__pycache__/
+*.pyc
+
+# Docker env
+.env
