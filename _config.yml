@@ -1,22 +1,14 @@
 title: "The World Today"
-description: "The World Today — Independent Global Journalism"
+description: "History, Geopolitics & Current Affairs — Updated Daily"
+author: "The World Today Editorial"
 url: "https://UncleD0886475978.github.io"
 baseurl: "/world-today-blog"
-author: "The World Today Editorial"
-timezone: UTC
+theme: minima
+minima:
+  skin: auto
+show_excerpts: true
 markdown: kramdown
-highlighter: rouge
 permalink: /:year/:month/:day/:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - terraform/
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
