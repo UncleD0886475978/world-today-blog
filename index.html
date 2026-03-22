@@ -3,71 +3,162 @@ layout: default
 title: " "
 ---
 <style>
-  .site-header { background: #1a1a2e !important; border-bottom: 3px solid #e74c3c; }
-  .site-header a, .site-title, .site-nav a { color: #ffffff !important; }
-  .site-title { font-size: 1.6em !important; font-weight: 900 !important; letter-spacing: 2px; }
-  .page-content { padding-top: 0 !important; }
-  .wrapper { max-width: 100% !important; padding: 0 !important; }
-  body { background: #f5f6fa; }
-  .hero { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; padding: 40px 20px; text-align: center; margin-bottom: 30px; }
-  .hero p { font-size: 1em; opacity: 0.75; margin: 0; }
-  .post-list { max-width: 860px; margin: 0 auto; padding: 0 20px 40px; }
-  .post-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s; }
-  .post-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
-  .post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
-  .post-category { color: white; font-size: 0.68em; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
-  .cat-geo      { background: #2980b9; }
-  .cat-conflict { background: #e74c3c; }
-  .cat-history  { background: #8e44ad; }
-  .cat-default  { background: #27ae60; }
-  .post-timestamp { color: #999; font-size: 0.8em; }
-  .post-title { font-size: 1.2em; font-weight: 700; margin: 0 0 8px 0; line-height: 1.4; }
-  .post-title a { color: #1a1a2e; text-decoration: none; }
-  .post-title a:hover { color: #e74c3c; }
-  .post-excerpt { color: #666; font-size: 0.9em; line-height: 1.6; margin: 0; }
-  .read-more { display: inline-block; margin-top: 10px; color: #2980b9; font-size: 0.85em; font-weight: 600; text-decoration: none; }
-  .read-more:hover { color: #e74c3c; }
-  .nav-links { display: flex; gap: 20px; justify-content: center; background: #16213e; padding: 12px; flex-wrap: wrap; }
-  .nav-links a { color: #ccc; text-decoration: none; font-size: 0.9em; font-weight: 600; padding: 4px 12px; border-radius: 4px; }
-  .nav-links a:hover { color: #fff; background: #e74c3c; }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --ink: #0d0d0d; --paper: #f4f1eb; --red: #c0392b; --gold: #b8860b; --muted: #6b6459; --border: #d4cfc5; }
+body { background: var(--paper); font-family: "Source Sans 3", sans-serif; color: var(--ink); }
+.masthead { border-bottom: 3px double var(--ink); padding: 18px 40px 14px; display: flex; align-items: center; justify-content: space-between; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+.masthead-left { display: flex; align-items: baseline; gap: 16px; }
+.masthead-title { font-family: "Playfair Display", serif; font-size: 2rem; font-weight: 900; color: var(--ink); text-decoration: none; }
+.masthead-date { font-size: 0.75rem; color: var(--muted); font-style: italic; }
+.masthead-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--red); border: 1px solid var(--red); padding: 2px 8px; }
+.ticker { background: var(--ink); color: #fff; padding: 6px 0; overflow: hidden; white-space: nowrap; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; }
+.ticker-inner { display: inline-block; animation: ticker 40s linear infinite; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.filter-section { background: var(--ink); color: #fff; padding: 28px 40px; }
+.filter-section h2 { font-family: "Playfair Display", serif; font-size: 1rem; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: #aaa; margin-bottom: 20px; }
+.filter-groups { display: flex; flex-direction: column; gap: 18px; }
+.filter-group-label { font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 600; }
+.filter-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { display: inline-block; padding: 6px 16px; border: 1px solid rgba(255,255,255,0.25); border-radius: 2px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; color: #ddd; background: transparent; user-select: none; }
+.pill:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.08); }
+.pill.active { background: var(--red); border-color: var(--red); color: #fff; }
+.pill.active-all { background: var(--gold); border-color: var(--gold); color: #000; }
+.active-filter-bar { background: var(--red); color: #fff; padding: 8px 40px; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; display: none; }
+.active-filter-bar.visible { display: block; }
+.posts-wrapper { max-width: 1200px; margin: 0 auto; padding: 40px 40px 60px; }
+.posts-header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 32px; }
+.posts-header h3 { font-family: "Playfair Display", serif; font-size: 1.5rem; font-weight: 700; }
+.post-count { font-size: 0.75rem; color: var(--muted); font-style: italic; }
+.posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; }
+.post-card { border: 1px solid var(--border); background: #fff; padding: 24px; transition: transform 0.2s, box-shadow 0.2s; }
+.post-card:hover { transform: translateY(-3px); box-shadow: 4px 4px 0 var(--ink); }
+.post-card.hidden { display: none; }
+.card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.card-category { font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 3px 8px; }
+.cat-geopolitics { background: #1a3a5c; color: #fff; }
+.cat-conflict { background: var(--red); color: #fff; }
+.cat-history { background: #2d4a22; color: #fff; }
+.cat-default { background: #4a3520; color: #fff; }
+.card-region { font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.card-date { font-size: 0.72rem; color: var(--muted); font-style: italic; margin-bottom: 10px; }
+.card-title { font-family: "Playfair Display", serif; font-size: 1.1rem; font-weight: 700; line-height: 1.35; margin-bottom: 10px; }
+.card-title a { text-decoration: none; color: var(--ink); }
+.card-title a:hover { color: var(--red); }
+.card-excerpt { font-size: 0.85rem; color: #555; line-height: 1.6; margin-bottom: 14px; }
+.card-read-more { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); padding-bottom: 1px; }
+.card-read-more:hover { color: var(--ink); border-color: var(--ink); }
+.no-results { display: none; text-align: center; padding: 60px 20px; color: var(--muted); font-style: italic; grid-column: 1/-1; }
+.no-results.visible { display: block; }
+.site-footer-custom { background: var(--ink); color: #888; text-align: center; padding: 24px; font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; }
+@media (max-width: 700px) {
+  .masthead { padding: 14px 20px; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .filter-section { padding: 20px; }
+  .posts-wrapper { padding: 24px 16px 40px; }
+  .posts-grid { grid-template-columns: 1fr; }
+}
+.page-content > .wrapper > h1,
+.page-content > .wrapper > h2,
+.page-content > .wrapper > ul { display: none !important; }
 </style>
 
-<div class="hero">
-  <p>🌍 History · Geopolitics · Current Affairs — Published Daily</p>
+<div class="masthead">
+  <div class="masthead-left">
+    <a class="masthead-title" href="{{ site.baseurl }}/">The World Today</a>
+    <span class="masthead-date" id="live-date"></span>
+  </div>
+  <span class="masthead-tag">Daily Intelligence</span>
 </div>
 
-<div class="nav-links">
-  <a href="{{ site.baseurl }}/about/">About</a>
-  <a href="{{ site.baseurl }}/geopolitics/">Geopolitics</a>
-  <a href="{{ site.baseurl }}/conflict/">Conflict & Security</a>
-  <a href="{{ site.baseurl }}/history/">History & Analysis</a>
+<div class="ticker">
+  <span class="ticker-inner">
+    &nbsp;&nbsp;&#9670;&nbsp;&nbsp;GEOPOLITICS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;CONFLICT &amp; SECURITY&nbsp;&nbsp;&#9670;&nbsp;&nbsp;HISTORY &amp; ANALYSIS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;MIDDLE EAST&nbsp;&nbsp;&#9670;&nbsp;&nbsp;EUROPE&nbsp;&nbsp;&#9670;&nbsp;&nbsp;ASIA-PACIFIC&nbsp;&nbsp;&#9670;&nbsp;&nbsp;AMERICAS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;AFRICA&nbsp;&nbsp;&#9670;&nbsp;&nbsp;GLOBAL ECONOMY&nbsp;&nbsp;&#9670;&nbsp;&nbsp;DIPLOMACY&nbsp;&nbsp;&#9670;&nbsp;&nbsp;GEOPOLITICS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;CONFLICT &amp; SECURITY&nbsp;&nbsp;&#9670;&nbsp;&nbsp;HISTORY &amp; ANALYSIS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;MIDDLE EAST&nbsp;&nbsp;&#9670;&nbsp;&nbsp;EUROPE&nbsp;&nbsp;&#9670;&nbsp;&nbsp;ASIA-PACIFIC&nbsp;&nbsp;&#9670;&nbsp;&nbsp;AMERICAS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;AFRICA&nbsp;&nbsp;&#9670;&nbsp;&nbsp;GLOBAL ECONOMY&nbsp;&nbsp;&#9670;&nbsp;&nbsp;DIPLOMACY&nbsp;&nbsp;
+  </span>
 </div>
 
-<div class="post-list">
-  {% for post in site.posts limit:10 %}
-    {% assign cat = post.categories[0] | downcase %}
-    <div class="post-card">
-      <div class="post-meta">
-        {% if cat contains "geopolit" %}
-          <span class="post-category cat-geo">{{ post.categories[0] }}</span>
-        {% elsif cat contains "history" %}
-          <span class="post-category cat-history">{{ post.categories[0] }}</span>
-        {% elsif cat contains "conflict" %}
-          <span class="post-category cat-conflict">{{ post.categories[0] }}</span>
-        {% else %}
-          <span class="post-category cat-default">{{ post.categories[0] }}</span>
-        {% endif %}
-        <span class="post-timestamp">🕐 {{ post.date | date: "%B %d, %Y · %I:%M %p UTC" }}</span>
+<div class="filter-section">
+  <h2>Browse by Region or Topic</h2>
+  <div class="filter-groups">
+    <div>
+      <div class="filter-group-label">&#127757; World Regions</div>
+      <div class="filter-pills" id="region-pills">
+        <span class="pill active-all" data-filter="all" onclick="setFilter('all',this)">All Regions</span>
+        <span class="pill" data-filter="middle-east" onclick="setFilter('middle-east',this)">Middle East</span>
+        <span class="pill" data-filter="europe" onclick="setFilter('europe',this)">Europe</span>
+        <span class="pill" data-filter="asia-pacific" onclick="setFilter('asia-pacific',this)">Asia-Pacific</span>
+        <span class="pill" data-filter="americas" onclick="setFilter('americas',this)">Americas</span>
+        <span class="pill" data-filter="africa" onclick="setFilter('africa',this)">Africa</span>
+        <span class="pill" data-filter="russia" onclick="setFilter('russia',this)">Russia &amp; Central Asia</span>
+        <span class="pill" data-filter="global" onclick="setFilter('global',this)">Global</span>
       </div>
-      <div class="post-title">
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </div>
-      {% if post.description %}
-        <p class="post-excerpt">{{ post.description }}</p>
-      {% elsif post.excerpt %}
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
-      {% endif %}
-      <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Read full article →</a>
     </div>
-  {% endfor %}
+    <div>
+      <div class="filter-group-label">&#128240; Content Type</div>
+      <div class="filter-pills" id="type-pills">
+        <span class="pill active-all" data-filter="all-type" onclick="setTypeFilter('all-type',this)">All Topics</span>
+        <span class="pill" data-filter="geopolitics" onclick="setTypeFilter('geopolitics',this)">Geopolitics</span>
+        <span class="pill" data-filter="conflict" onclick="setTypeFilter('conflict',this)">Conflict &amp; Security</span>
+        <span class="pill" data-filter="history" onclick="setTypeFilter('history',this)">History &amp; Analysis</span>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="active-filter-bar" id="active-filter-bar">
+  Showing: <span id="active-filter-label">All Posts</span>
+</div>
+
+<div class="posts-wrapper">
+  <div class="posts-header">
+    <h3>Latest Dispatches</h3>
+    <span class="post-count" id="post-count"></span>
+  </div>
+  <div class="posts-grid" id="posts-grid">
+    {% for post in site.posts limit:30 %}
+      {% assign cat = post.categories[0] | downcase %}
+      {% assign title_lower = post.title | downcase %}
+      {% assign region = "global" %}
+      {% if title_lower contains "iran" or title_lower contains "israel" or title_lower contains "gaza" or title_lower contains "syria" or title_lower contains "iraq" or title_lower contains "saudi" or title_lower contains "hormuz" or title_lower contains "yemen" %}
+        {% assign region = "middle-east" %}
+      {% elsif title_lower contains "ukraine" or title_lower contains "russia" or title_lower contains "nato" or title_lower contains "europe" or title_lower contains "france" or title_lower contains "germany" or title_lower contains "britain" or title_lower contains "poland" %}
+        {% assign region = "europe" %}
+      {% elsif title_lower contains "china" or title_lower contains "taiwan" or title_lower contains "japan" or title_lower contains "korea" or title_lower contains "india" or title_lower contains "pacific" or title_lower contains "asia" or title_lower contains "manila" or title_lower contains "beijing" %}
+        {% assign region = "asia-pacific" %}
+      {% elsif title_lower contains "america" or title_lower contains "united states" or title_lower contains "latin" or title_lower contains "brazil" or title_lower contains "venezuela" or title_lower contains "mexico" %}
+        {% assign region = "americas" %}
+      {% elsif title_lower contains "africa" or title_lower contains "sudan" or title_lower contains "ethiopia" or title_lower contains "congo" or title_lower contains "sahel" or title_lower contains "nigeria" %}
+        {% assign region = "africa" %}
+      {% elsif title_lower contains "moscow" or title_lower contains "kremlin" or title_lower contains "putin" or title_lower contains "central asia" %}
+        {% assign region = "russia" %}
+      {% endif %}
+      {% assign type = "default" %}
+      {% if cat contains "geopolit" %}{% assign type = "geopolitics" %}
+      {% elsif cat contains "conflict" or cat contains "security" %}{% assign type = "conflict" %}
+      {% elsif cat contains "history" %}{% assign type = "history" %}
+      {% endif %}
+      <div class="post-card" data-region="{{ region }}" data-type="{{ type }}">
+        <div class="card-top">
+          <span class="card-category cat-{{ type }}">{{ post.categories[0] }}</span>
+          <span class="card-region">{{ region | replace: "-", " " | upcase }}</span>
+        </div>
+        <div class="card-date">&#128336; {{ post.date | date: "%B %d, %Y" }}</div>
+        <div class="card-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
+        {% if post.description %}<p class="card-excerpt">{{ post.description }}</p>
+        {% elsif post.excerpt %}<p class="card-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>{% endif %}
+        <a class="card-read-more" href="{{ post.url | prepend: site.baseurl }}">Read Full Dispatch</a>
+      </div>
+    {% endfor %}
+    <div class="no-results" id="no-results">No dispatches found for this selection.</div>
+  </div>
+</div>
+
+<div class="site-footer-custom">The World Today &nbsp;&#9670;&nbsp; Updated Daily &nbsp;&#9670;&nbsp; {{ site.time | date: "%Y" }}</div>
+
+<script>
+document.getElementById("live-date").textContent = new Date().toLocaleDateString("en-US", {weekday:"long",year:"numeric",month:"long",day:"numeric"});
+var activeRegion="all",activeType="all-type";
+function setFilter(val,el){activeRegion=val;document.querySelectorAll("#region-pills .pill").forEach(function(p){p.classList.remove("active","active-all")});el.classList.add(val==="all"?"active-all":"active");applyFilters();}
+function setTypeFilter(val,el){activeType=val;document.querySelectorAll("#type-pills .pill").forEach(function(p){p.classList.remove("active","active-all")});el.classList.add(val==="all-type"?"active-all":"active");applyFilters();}
+function applyFilters(){var visible=0;document.querySelectorAll(".post-card").forEach(function(card){var show=(activeRegion==="all"||card.dataset.region===activeRegion)&&(activeType==="all-type"||card.dataset.type===activeType);card.classList.toggle("hidden",!show);if(show)visible++;});document.getElementById("post-count").textContent=visible+" dispatch"+(visible!==1?"es":"");document.getElementById("no-results").classList.toggle("visible",visible===0);var bar=document.getElementById("active-filter-bar");bar.classList.toggle("visible",!(activeRegion==="all"&&activeType==="all-type"));var parts=[];if(activeRegion!=="all")parts.push(activeRegion.replace("-"," ").toUpperCase());if(activeType!=="all-type")parts.push(activeType.toUpperCase());document.getElementById("active-filter-label").textContent=parts.join(" + ")||"All Posts";}
+window.addEventListener("DOMContentLoaded",function(){var total=document.querySelectorAll(".post-card").length;document.getElementById("post-count").textContent=total+" dispatches";});
+</script>
