@@ -1,32 +1,15 @@
----
-layout: default
----
-{% assign category = page.categories[0] | downcase %}
-{% if category == "geopolitics" %}
-  {% assign banner_color = "#1a3a5c" %}
-  {% assign accent_color = "#2e86c1" %}
-{% elsif category == "conflict & security" %}
-  {% assign banner_color = "#5c1a1a" %}
-  {% assign accent_color = "#c0392b" %}
-{% elsif category == "history & analysis" %}
-  {% assign banner_color = "#1a4a2e" %}
-  {% assign accent_color = "#27ae60" %}
-{% else %}
-  {% assign banner_color = "#2c2c2c" %}
-  {% assign accent_color = "#8e44ad" %}
-{% endif %}
-<article class="post">
-  <div class="post-banner" style="background-color: {{ banner_color }};">
-    <div class="post-banner-inner">
-      <span class="post-category-tag" style="background-color: {{ accent_color }};">{{ page.categories[0] }}</span>
-      <h1 class="post-title">{{ page.title }}</h1>
-      <div class="post-meta">
-        <span>{{ page.date | date: "%B %-d, %Y" }}</span>
-        {% if page.author %}<span> · {{ page.author }}</span>{% endif %}
-      </div>
-    </div>
-  </div>
-  <div class="post-content-wrapper">
-    <div class="post-content">{{ content }}</div>
-  </div>
-</article>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} | The World Today</title>
+</head>
+<body style="font-family: Georgia, serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.7;">
+<a href="{{ site.baseurl }}/" style="color: #c0392b; font-size: 0.85rem; text-decoration: none;">← Back to The World Today</a>
+<h1 style="font-size: 2rem; margin: 20px 0 10px;">{{ page.title }}</h1>
+<p style="color: #888; font-size: 0.85rem;">{{ page.date | date: "%B %d, %Y" }} &nbsp;|&nbsp; {{ page.categories | join: ", " }}</p>
+<hr style="border: 1px solid #ddd; margin: 20px 0;">
+{{ content }}
+</body>
+</html>
