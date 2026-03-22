@@ -4,19 +4,9 @@ author: "The World Today Editorial"
 url: "https://UncleD0886475978.github.io"
 baseurl: "/world-today-blog"
 theme: minima
-minima:
-  skin: auto
-show_excerpts: true
+show_excerpts: false
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
-paginate: 10
-paginate_path: "/page:num/"
-header_pages:
-  - about.md
-  - geopolitics.md
-  - conflict.md
-  - history.md
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-paginate
