@@ -3,70 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  {% seo %}
+  {% feed_meta %}
 </head>
 <body>
-<header class="site-header">
-  <div class="header-top">
-    <div class="header-meta" id="live-date"></div>
-    <a href="{{ '/' | relative_url }}" class="masthead">
-      <span class="masthead-the">THE</span>
-      <span class="masthead-world">WORLD</span>
-      <span class="masthead-today">TODAY</span>
-      <span class="masthead-tag">Independent Global Journalism</span>
-    </a>
-    <div class="header-meta header-meta-right">Daily Edition</div>
-  </div>
-  <nav class="region-nav">
-    <div class="region-nav-inner">
-      <a href="{{ '/' | relative_url }}" class="rnav-item rnav-all">All</a>
-      <a href="#africa" class="rnav-item" data-region="Africa">Africa</a>
-      <a href="#europe" class="rnav-item" data-region="Europe">Europe</a>
-      <a href="#asia" class="rnav-item" data-region="Asia">Asia</a>
-      <a href="#north-america" class="rnav-item" data-region="North America">N. America</a>
-      <a href="#south-america" class="rnav-item" data-region="South America">S. America</a>
-      <a href="#middle-east" class="rnav-item" data-region="Middle East">Middle East</a>
-      <a href="#oceania" class="rnav-item" data-region="Australia & Oceania">Oceania</a>
-      <a href="#antarctica" class="rnav-item" data-region="Antarctica">Antarctica</a>
-    </div>
-  </nav>
-</header>
-<main>{{ content }}</main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">THE WORLD TODAY</div>
-      <p>Global journalism published daily across 8 regions.</p>
-    </div>
-    <div>
-      <h5>Regions</h5>
-      <ul>
-        <li><a href="#africa">Africa</a></li>
-        <li><a href="#europe">Europe</a></li>
-        <li><a href="#asia">Asia</a></li>
-        <li><a href="#north-america">North America</a></li>
-        <li><a href="#south-america">South America</a></li>
-        <li><a href="#middle-east">Middle East</a></li>
-        <li><a href="#oceania">Australia &amp; Oceania</a></li>
-        <li><a href="#antarctica">Antarctica</a></li>
-      </ul>
-    </div>
-    <div>
-      <p>Powered by Google Gemini · Hosted on GitHub Pages</p>
-      <p>© {{ site.time | date: "%Y" }} The World Today</p>
-    </div>
-  </div>
-</footer>
-<script>
-  const d = document.getElementById('live-date');
-  if (d) d.textContent = new Date().toLocaleDateString('en-US', {weekday:'long',year:'numeric',month:'long',day:'numeric'});
-  const t = document.querySelector('.ticker-track');
-  if (t) t.innerHTML += t.innerHTML;
-</script>
+{{ content }}
 </body>
 </html>
