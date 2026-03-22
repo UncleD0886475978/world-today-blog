@@ -6,6 +6,8 @@ categories: [History & Analysis]
 author: "The World Today Editorial"
 excerpt: "As global economies increasingly turn inward, adopting protectionist trade policies in response to geopolitical tensions and a push for national self-reliance, 'The World Today' examines the striking "
 ---
+{% raw %}
+
 
 Thursday, March 12, 2026 – In recent months, a discernible shift in global economic policy has become increasingly evident. From the European Union's new 'Strategic Autonomy Act' mandating domestic sourcing for critical technologies to the United States' expanded 'Buy American' provisions and China's continued emphasis on 'dual circulation,' a wave of commercial nationalism is sweeping across major economies. This inward turn, driven by geopolitical rivalries, supply chain vulnerabilities exposed during recent crises, and a renewed focus on national security, bears an unsettling resemblance to a fraught chapter in economic history: the interwar period.
 
@@ -26,3 +28,4 @@ The mechanics of protectionism’s harm are well-documented. Tariffs increase th
 Beyond the immediate economic costs, a retreat into protectionism carries significant geopolitical risks. In the 1930s, economic isolationism fueled nationalist sentiments and distrust among nations, contributing to the political instability that ultimately paved the way for World War II. Today, a similar dynamic could unfold. As economic ties fray, so too might diplomatic bridges. The erosion of multilateral trade institutions like the World Trade Organization (WTO), already under strain, could further diminish platforms for dialogue and cooperation. Economic grievances can quickly spill over into political disputes, escalating existing tensions and potentially leading to new conflicts. The promise of global prosperity through interconnectedness gives way to a zero-sum game, where one nation's gain is perceived as another's loss.
 
 The current drive towards protectionism, while understandable in the context of national security and resilience, carries a heavy historical warning. The interwar period demonstrated unequivocally that a fragmented global economy is not merely less prosperous but also inherently more unstable. As nations grapple with complex contemporary challenges, the lessons of the past underscore the critical importance of careful consideration, multilateral engagement, and a renewed commitment to open trade, lest we repeat the costly mistakes of a bygone era.
+{% endraw %}
