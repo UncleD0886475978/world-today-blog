@@ -6,6 +6,7 @@ author: "The World Today Editorial"
 timezone: UTC
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
+theme: jekyll-theme-primer
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -15,3 +16,7 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: "index.html"
+    values:
+      layout: bare
