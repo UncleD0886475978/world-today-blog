@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ page.title }} | The World Today</title>
-</head>
-<body style="font-family: Georgia, serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.7;">
-<a href="{{ site.baseurl }}/" style="color: #c0392b; font-size: 0.85rem; text-decoration: none;">← Back to The World Today</a>
-<h1 style="font-size: 2rem; margin: 20px 0 10px;">{{ page.title }}</h1>
-<p style="color: #888; font-size: 0.85rem;">{{ page.date | date: "%B %d, %Y" }} &nbsp;|&nbsp; {{ page.categories | join: ", " }}</p>
-<hr style="border: 1px solid #ddd; margin: 20px 0;">
+---
+layout: bare
+---
+<style>
+body{font-family:Georgia,serif;max-width:800px;margin:40px auto;padding:0 20px;line-height:1.8;color:#222;background:#f4f1eb}
+a.back{display:inline-block;margin-bottom:24px;color:#c0392b;font-size:0.85rem;font-family:sans-serif;text-decoration:none;border-bottom:1px solid #c0392b}
+h1{font-size:2rem;line-height:1.2;margin-bottom:12px}
+.meta{color:#888;font-size:0.85rem;margin-bottom:24px;font-family:sans-serif}
+.cat{background:#c0392b;color:#fff;font-size:0.65rem;font-weight:700;padding:3px 8px;letter-spacing:2px;text-transform:uppercase;margin-right:8px}
+hr{border:1px solid #ddd;margin:24px 0}
+h2{font-size:1.3rem;margin:2rem 0 0.75rem;color:#111}
+p{margin-bottom:1.2rem}
+</style>
+<a class="back" href="{{ site.baseurl }}/">&#8592; The World Today</a>
+<span class="cat">{{ page.categories[0] }}</span>
+<h1>{{ page.title }}</h1>
+<div class="meta">{{ page.date | date: "%B %-d, %Y &middot; %H:%M UTC" }} &nbsp;&middot;&nbsp; {{ page.author }}</div>
+{% if page.description %}<p><em>{{ page.description }}</em></p><hr>{% endif %}
 {{ content }}
-</body>
-</html>
