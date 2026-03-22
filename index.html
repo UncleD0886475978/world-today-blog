@@ -1,165 +1,134 @@
 ---
 layout: bare
-title: The World Today
+title: "The World Today"
 ---
-<!-- v2 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The World Today</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600&display=swap');
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --ink: #0d0d0d; --paper: #f4f1eb; --red: #c0392b; --gold: #b8860b; --muted: #6b6459; --border: #d4cfc5; }
-body { background: var(--paper); font-family: "Source Sans 3", sans-serif; color: var(--ink); }
-.masthead { border-bottom: 3px double var(--ink); padding: 18px 40px 14px; display: flex; align-items: center; justify-content: space-between; background: var(--paper); position: sticky; top: 0; z-index: 100; }
-.masthead-left { display: flex; align-items: baseline; gap: 16px; }
-.masthead-title { font-family: "Playfair Display", serif; font-size: 2rem; font-weight: 900; color: var(--ink); text-decoration: none; }
-.masthead-date { font-size: 0.75rem; color: var(--muted); font-style: italic; }
-.masthead-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--red); border: 1px solid var(--red); padding: 2px 8px; }
-.ticker { background: var(--ink); color: #fff; padding: 6px 0; overflow: hidden; white-space: nowrap; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; }
-.ticker-inner { display: inline-block; animation: ticker 40s linear infinite; }
-@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-.filter-section { background: var(--ink); color: #fff; padding: 28px 40px; }
-.filter-section h2 { font-family: "Playfair Display", serif; font-size: 1rem; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: #aaa; margin-bottom: 20px; }
-.filter-groups { display: flex; flex-direction: column; gap: 18px; }
-.filter-group-label { font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 600; }
-.filter-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.pill { display: inline-block; padding: 6px 16px; border: 1px solid rgba(255,255,255,0.25); border-radius: 2px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; color: #ddd; background: transparent; user-select: none; }
-.pill:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.08); }
-.pill.active { background: var(--red); border-color: var(--red); color: #fff; }
-.pill.active-all { background: var(--gold); border-color: var(--gold); color: #000; }
-.active-filter-bar { background: var(--red); color: #fff; padding: 8px 40px; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; display: none; }
-.active-filter-bar.visible { display: block; }
-.posts-wrapper { max-width: 1200px; margin: 0 auto; padding: 40px 40px 60px; }
-.posts-header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 32px; }
-.posts-header h3 { font-family: "Playfair Display", serif; font-size: 1.5rem; font-weight: 700; }
-.post-count { font-size: 0.75rem; color: var(--muted); font-style: italic; }
-.posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; }
-.post-card { border: 1px solid var(--border); background: #fff; padding: 24px; transition: transform 0.2s, box-shadow 0.2s; }
-.post-card:hover { transform: translateY(-3px); box-shadow: 4px 4px 0 var(--ink); }
-.post-card.hidden { display: none; }
-.card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.card-category { font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 3px 8px; }
-.cat-geopolitics { background: #1a3a5c; color: #fff; }
-.cat-conflict { background: var(--red); color: #fff; }
-.cat-history { background: #2d4a22; color: #fff; }
-.cat-default { background: #4a3520; color: #fff; }
-.card-region { font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-.card-date { font-size: 0.72rem; color: var(--muted); font-style: italic; margin-bottom: 10px; }
-.card-title { font-family: "Playfair Display", serif; font-size: 1.1rem; font-weight: 700; line-height: 1.35; margin-bottom: 10px; }
-.card-title a { text-decoration: none; color: var(--ink); }
-.card-title a:hover { color: var(--red); }
-.card-excerpt { font-size: 0.85rem; color: #555; line-height: 1.6; margin-bottom: 14px; }
-.card-read-more { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); padding-bottom: 1px; }
-.card-read-more:hover { color: var(--ink); border-color: var(--ink); }
-.no-results { display: none; text-align: center; padding: 60px 20px; color: var(--muted); font-style: italic; grid-column: 1/-1; }
-.no-results.visible { display: block; }
-.site-footer-custom { background: var(--ink); color: #888; text-align: center; padding: 24px; font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; }
-@media (max-width: 700px) {
-  .masthead { padding: 14px 20px; flex-direction: column; gap: 8px; align-items: flex-start; }
-  .filter-section { padding: 20px; }
-  .posts-wrapper { padding: 24px 16px 40px; }
-  .posts-grid { grid-template-columns: 1fr; }
-}
-.page-content > .wrapper > h1,
-.page-content > .wrapper > h2,
-.page-content > .wrapper > ul { display: none !important; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#f4f1eb;color:#0d0d0d;font-family:"DM Sans",sans-serif}
+a{text-decoration:none;color:inherit}
+.mast{background:#0d0d0d;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:3px solid #c0392b}
+.mast-title{font-family:"Playfair Display",serif;font-size:1.8rem;font-weight:900;color:#fff;letter-spacing:-0.5px}
+.mast-title span{color:#c0392b}
+.mast-right{font-size:0.7rem;color:#888;letter-spacing:2px;text-transform:uppercase}
+.ticker{background:#1a1a1a;padding:7px 0;overflow:hidden;white-space:nowrap;border-bottom:1px solid #333}
+.ticker-inner{display:inline-block;animation:tick 50s linear infinite;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:#aaa}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.filters{background:#111;padding:24px 32px}
+.filter-label{font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:#c0392b;font-weight:700;margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.pill{padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:2px;font-size:0.75rem;font-weight:600;cursor:pointer;color:#bbb;transition:all 0.2s;user-select:none}
+.pill:hover{border-color:#fff;color:#fff}
+.pill.on{background:#c0392b;border-color:#c0392b;color:#fff}
+.pill.on-all{background:#b8860b;border-color:#b8860b;color:#000}
+.posts{max-width:1200px;margin:0 auto;padding:36px 32px 60px}
+.posts-hdr{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #0d0d0d;padding-bottom:10px;margin-bottom:28px}
+.posts-hdr h2{font-family:"Playfair Display",serif;font-size:1.4rem;font-weight:700}
+.count{font-size:0.75rem;color:#888;font-style:italic}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.card{background:#fff;border:1px solid #ddd;padding:22px;border-top:3px solid var(--rc,#ddd);transition:transform 0.18s,box-shadow 0.18s}
+.card:hover{transform:translateY(-3px);box-shadow:4px 4px 0 #0d0d0d}
+.card.hide{display:none}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.cat-badge{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;color:#fff}
+.cat-geo{background:#1a3a5c}
+.cat-conflict{background:#c0392b}
+.cat-history{background:#2d4a22}
+.cat-default{background:#4a3520}
+.card-region{font-size:0.62rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#999}
+.card-date{font-size:0.7rem;color:#aaa;margin-bottom:8px}
+.card-title{font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;line-height:1.35;margin-bottom:10px}
+.card-title a:hover{color:#c0392b}
+.card-desc{font-size:0.82rem;color:#555;line-height:1.6;margin-bottom:12px}
+.card-more{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c0392b;border-bottom:1px solid #c0392b;padding-bottom:1px}
+.card-more:hover{color:#0d0d0d;border-color:#0d0d0d}
+.empty{display:none;grid-column:1/-1;text-align:center;padding:60px;color:#aaa;font-style:italic}
+.empty.show{display:block}
+footer{background:#0d0d0d;color:#555;text-align:center;padding:20px;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase}
+@media(max-width:640px){.mast{padding:12px 16px}.filters{padding:16px}.posts{padding:20px 16px 40px}.grid{grid-template-columns:1fr}}
 </style>
 
-<div class="masthead">
-  <div class="masthead-left">
-    <a class="masthead-title" href="{{ site.baseurl }}/">The World Today</a>
-    <span class="masthead-date" id="live-date"></span>
+<div class="mast">
+  <div class="mast-title">The <span>World</span> Today</div>
+  <div class="mast-right" id="ld"></div>
+</div>
+
+<div class="ticker"><span class="ticker-inner">
+  &nbsp;&#9670;&nbsp; AFRICA &nbsp;&#9670;&nbsp; EUROPE &nbsp;&#9670;&nbsp; ASIA &nbsp;&#9670;&nbsp; NORTH AMERICA &nbsp;&#9670;&nbsp; SOUTH AMERICA &nbsp;&#9670;&nbsp; MIDDLE EAST &nbsp;&#9670;&nbsp; AUSTRALIA &amp; OCEANIA &nbsp;&#9670;&nbsp; ANTARCTICA &nbsp;&#9670;&nbsp; GEOPOLITICS &nbsp;&#9670;&nbsp; CONFLICT &amp; SECURITY &nbsp;&#9670;&nbsp; HISTORY &amp; ANALYSIS &nbsp;&#9670;&nbsp; AFRICA &nbsp;&#9670;&nbsp; EUROPE &nbsp;&#9670;&nbsp; ASIA &nbsp;&#9670;&nbsp; NORTH AMERICA &nbsp;&#9670;&nbsp; SOUTH AMERICA &nbsp;&#9670;&nbsp; MIDDLE EAST &nbsp;&#9670;&nbsp; AUSTRALIA &amp; OCEANIA &nbsp;&#9670;&nbsp; ANTARCTICA &nbsp;&#9670;&nbsp; GEOPOLITICS &nbsp;&#9670;&nbsp; CONFLICT &amp; SECURITY &nbsp;&#9670;&nbsp; HISTORY &amp; ANALYSIS &nbsp;&nbsp;
+</span></div>
+
+<div class="filters">
+  <div class="filter-label">&#127757; Browse by Region</div>
+  <div class="pills" id="rp">
+    <span class="pill on-all" data-r="all" onclick="sr('all',this)">All Regions</span>
+    <span class="pill" data-r="africa" onclick="sr('africa',this)">Africa</span>
+    <span class="pill" data-r="europe" onclick="sr('europe',this)">Europe</span>
+    <span class="pill" data-r="asia" onclick="sr('asia',this)">Asia</span>
+    <span class="pill" data-r="namerica" onclick="sr('namerica',this)">North America</span>
+    <span class="pill" data-r="samerica" onclick="sr('samerica',this)">South America</span>
+    <span class="pill" data-r="mideast" onclick="sr('mideast',this)">Middle East</span>
+    <span class="pill" data-r="oceania" onclick="sr('oceania',this)">Australia &amp; Oceania</span>
+    <span class="pill" data-r="antarctica" onclick="sr('antarctica',this)">Antarctica</span>
   </div>
-  <span class="masthead-tag">Daily Intelligence</span>
+  <div class="filter-label">&#128240; Browse by Topic</div>
+  <div class="pills" id="tp">
+    <span class="pill on-all" data-t="all" onclick="st('all',this)">All Topics</span>
+    <span class="pill" data-t="geo" onclick="st('geo',this)">Geopolitics</span>
+    <span class="pill" data-t="conflict" onclick="st('conflict',this)">Conflict &amp; Security</span>
+    <span class="pill" data-t="history" onclick="st('history',this)">History &amp; Analysis</span>
+  </div>
 </div>
 
-<div class="ticker">
-  <span class="ticker-inner">
-    &nbsp;&nbsp;&#9670;&nbsp;&nbsp;GEOPOLITICS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;CONFLICT &amp; SECURITY&nbsp;&nbsp;&#9670;&nbsp;&nbsp;HISTORY &amp; ANALYSIS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;MIDDLE EAST&nbsp;&nbsp;&#9670;&nbsp;&nbsp;EUROPE&nbsp;&nbsp;&#9670;&nbsp;&nbsp;ASIA-PACIFIC&nbsp;&nbsp;&#9670;&nbsp;&nbsp;AMERICAS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;AFRICA&nbsp;&nbsp;&#9670;&nbsp;&nbsp;GLOBAL ECONOMY&nbsp;&nbsp;&#9670;&nbsp;&nbsp;DIPLOMACY&nbsp;&nbsp;&#9670;&nbsp;&nbsp;GEOPOLITICS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;CONFLICT &amp; SECURITY&nbsp;&nbsp;&#9670;&nbsp;&nbsp;HISTORY &amp; ANALYSIS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;MIDDLE EAST&nbsp;&nbsp;&#9670;&nbsp;&nbsp;EUROPE&nbsp;&nbsp;&#9670;&nbsp;&nbsp;ASIA-PACIFIC&nbsp;&nbsp;&#9670;&nbsp;&nbsp;AMERICAS&nbsp;&nbsp;&#9670;&nbsp;&nbsp;AFRICA&nbsp;&nbsp;&#9670;&nbsp;&nbsp;GLOBAL ECONOMY&nbsp;&nbsp;&#9670;&nbsp;&nbsp;DIPLOMACY&nbsp;&nbsp;
-  </span>
-</div>
-
-<div class="filter-section">
-  <h2>Browse by Region or Topic</h2>
-  <div class="filter-groups">
-    <div>
-      <div class="filter-group-label">&#127757; World Regions</div>
-      <div class="filter-pills" id="region-pills">
-        <span class="pill active-all" data-filter="all" onclick="setFilter('all',this)">All Regions</span>
-        <span class="pill" data-filter="middle-east" onclick="setFilter('middle-east',this)">Middle East</span>
-        <span class="pill" data-filter="europe" onclick="setFilter('europe',this)">Europe</span>
-        <span class="pill" data-filter="asia-pacific" onclick="setFilter('asia-pacific',this)">Asia-Pacific</span>
-        <span class="pill" data-filter="americas" onclick="setFilter('americas',this)">Americas</span>
-        <span class="pill" data-filter="africa" onclick="setFilter('africa',this)">Africa</span>
-        <span class="pill" data-filter="russia" onclick="setFilter('russia',this)">Russia &amp; Central Asia</span>
-        <span class="pill" data-filter="global" onclick="setFilter('global',this)">Global</span>
+<div class="posts">
+  <div class="posts-hdr">
+    <h2>Latest Dispatches</h2>
+    <span class="count" id="cnt"></span>
+  </div>
+  <div class="grid" id="grid">
+    {% for post in site.posts limit:40 %}
+    {% assign cat = post.categories[0] | downcase %}
+    {% assign tl = post.title | downcase %}
+    {% assign r = "global" %}
+    {% if tl contains "africa" or tl contains "sudan" or tl contains "nigeria" or tl contains "ethiopia" or tl contains "congo" or tl contains "sahel" or tl contains "kenya" or tl contains "ghana" %}{% assign r = "africa" %}
+    {% elsif tl contains "europe" or tl contains "ukraine" or tl contains "france" or tl contains "germany" or tl contains "britain" or tl contains "poland" or tl contains "nato" or tl contains "berlin" or tl contains "paris" or tl contains "brussels" %}{% assign r = "europe" %}
+    {% elsif tl contains "china" or tl contains "taiwan" or tl contains "japan" or tl contains "korea" or tl contains "india" or tl contains "asia" or tl contains "pacific" or tl contains "beijing" or tl contains "tokyo" or tl contains "manila" or tl contains "shoal" %}{% assign r = "asia" %}
+    {% elsif tl contains "america" or tl contains "united states" or tl contains "canada" or tl contains "mexico" or tl contains "washington" or tl contains "trump" or tl contains "biden" %}{% assign r = "namerica" %}
+    {% elsif tl contains "brazil" or tl contains "latin" or tl contains "venezuela" or tl contains "colombia" or tl contains "argentina" or tl contains "chile" %}{% assign r = "samerica" %}
+    {% elsif tl contains "iran" or tl contains "israel" or tl contains "gaza" or tl contains "syria" or tl contains "iraq" or tl contains "saudi" or tl contains "hormuz" or tl contains "yemen" or tl contains "middle east" or tl contains "lebanon" %}{% assign r = "mideast" %}
+    {% elsif tl contains "australia" or tl contains "oceania" or tl contains "pacific island" or tl contains "new zealand" %}{% assign r = "oceania" %}
+    {% elsif tl contains "antarct" or tl contains "polar" or tl contains "arctic" %}{% assign r = "antarctica" %}
+    {% endif %}
+    {% assign t = "default" %}
+    {% if cat contains "geopolit" %}{% assign t = "geo" %}
+    {% elsif cat contains "conflict" or cat contains "security" %}{% assign t = "conflict" %}
+    {% elsif cat contains "history" %}{% assign t = "history" %}
+    {% endif %}
+    <div class="card" data-r="{{ r }}" data-t="{{ t }}">
+      <div class="card-top">
+        <span class="cat-badge cat-{{ t }}">{{ post.categories[0] }}</span>
+        <span class="card-region">{{ r | replace:"-"," " | upcase }}</span>
       </div>
+      <div class="card-date">{{ post.date | date: "%B %-d, %Y &middot; %H:%M UTC" }}</div>
+      <div class="card-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
+      {% if post.description %}<p class="card-desc">{{ post.description }}</p>{% elsif post.excerpt %}<p class="card-desc">{{ post.excerpt | strip_html | truncatewords: 22 }}</p>{% endif %}
+      <a class="card-more" href="{{ post.url | prepend: site.baseurl }}">Read Dispatch &rarr;</a>
     </div>
-    <div>
-      <div class="filter-group-label">&#128240; Content Type</div>
-      <div class="filter-pills" id="type-pills">
-        <span class="pill active-all" data-filter="all-type" onclick="setTypeFilter('all-type',this)">All Topics</span>
-        <span class="pill" data-filter="geopolitics" onclick="setTypeFilter('geopolitics',this)">Geopolitics</span>
-        <span class="pill" data-filter="conflict" onclick="setTypeFilter('conflict',this)">Conflict &amp; Security</span>
-        <span class="pill" data-filter="history" onclick="setTypeFilter('history',this)">History &amp; Analysis</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="active-filter-bar" id="active-filter-bar">
-  Showing: <span id="active-filter-label">All Posts</span>
-</div>
-
-<div class="posts-wrapper">
-  <div class="posts-header">
-    <h3>Latest Dispatches</h3>
-    <span class="post-count" id="post-count"></span>
-  </div>
-  <div class="posts-grid" id="posts-grid">
-    {% for post in site.posts limit:30 %}
-      {% assign cat = post.categories[0] | downcase %}
-      {% assign title_lower = post.title | downcase %}
-      {% assign region = "global" %}
-      {% if title_lower contains "iran" or title_lower contains "israel" or title_lower contains "gaza" or title_lower contains "syria" or title_lower contains "iraq" or title_lower contains "saudi" or title_lower contains "hormuz" or title_lower contains "yemen" %}
-        {% assign region = "middle-east" %}
-      {% elsif title_lower contains "ukraine" or title_lower contains "russia" or title_lower contains "nato" or title_lower contains "europe" or title_lower contains "france" or title_lower contains "germany" or title_lower contains "britain" or title_lower contains "poland" %}
-        {% assign region = "europe" %}
-      {% elsif title_lower contains "china" or title_lower contains "taiwan" or title_lower contains "japan" or title_lower contains "korea" or title_lower contains "india" or title_lower contains "pacific" or title_lower contains "asia" or title_lower contains "manila" or title_lower contains "beijing" %}
-        {% assign region = "asia-pacific" %}
-      {% elsif title_lower contains "america" or title_lower contains "united states" or title_lower contains "latin" or title_lower contains "brazil" or title_lower contains "venezuela" or title_lower contains "mexico" %}
-        {% assign region = "americas" %}
-      {% elsif title_lower contains "africa" or title_lower contains "sudan" or title_lower contains "ethiopia" or title_lower contains "congo" or title_lower contains "sahel" or title_lower contains "nigeria" %}
-        {% assign region = "africa" %}
-      {% elsif title_lower contains "moscow" or title_lower contains "kremlin" or title_lower contains "putin" or title_lower contains "central asia" %}
-        {% assign region = "russia" %}
-      {% endif %}
-      {% assign type = "default" %}
-      {% if cat contains "geopolit" %}{% assign type = "geopolitics" %}
-      {% elsif cat contains "conflict" or cat contains "security" %}{% assign type = "conflict" %}
-      {% elsif cat contains "history" %}{% assign type = "history" %}
-      {% endif %}
-      <div class="post-card" data-region="{{ region }}" data-type="{{ type }}">
-        <div class="card-top">
-          <span class="card-category cat-{{ type }}">{{ post.categories[0] }}</span>
-          <span class="card-region">{{ region | replace: "-", " " | upcase }}</span>
-        </div>
-        <div class="card-date">&#128336; {{ post.date | date: "%B %d, %Y" }}</div>
-        <div class="card-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
-        {% if post.description %}<p class="card-excerpt">{{ post.description }}</p>
-        {% elsif post.excerpt %}<p class="card-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>{% endif %}
-        <a class="card-read-more" href="{{ post.url | prepend: site.baseurl }}">Read Full Dispatch</a>
-      </div>
     {% endfor %}
-    <div class="no-results" id="no-results">No dispatches found for this selection.</div>
+    <div class="empty" id="empty">No dispatches found for this selection.</div>
   </div>
 </div>
 
-<div class="site-footer-custom">The World Today &nbsp;&#9670;&nbsp; Updated Daily &nbsp;&#9670;&nbsp; {{ site.time | date: "%Y" }}</div>
+<footer>The World Today &nbsp;&#9670;&nbsp; Independent Global Journalism &nbsp;&#9670;&nbsp; {{ site.time | date: "%Y" }}</footer>
 
 <script>
-document.getElementById("live-date").textContent = new Date().toLocaleDateString("en-US", {weekday:"long",year:"numeric",month:"long",day:"numeric"});
-var activeRegion="all",activeType="all-type";
-function setFilter(val,el){activeRegion=val;document.querySelectorAll("#region-pills .pill").forEach(function(p){p.classList.remove("active","active-all")});el.classList.add(val==="all"?"active-all":"active");applyFilters();}
-function setTypeFilter(val,el){activeType=val;document.querySelectorAll("#type-pills .pill").forEach(function(p){p.classList.remove("active","active-all")});el.classList.add(val==="all-type"?"active-all":"active");applyFilters();}
-function applyFilters(){var visible=0;document.querySelectorAll(".post-card").forEach(function(card){var show=(activeRegion==="all"||card.dataset.region===activeRegion)&&(activeType==="all-type"||card.dataset.type===activeType);card.classList.toggle("hidden",!show);if(show)visible++;});document.getElementById("post-count").textContent=visible+" dispatch"+(visible!==1?"es":"");document.getElementById("no-results").classList.toggle("visible",visible===0);var bar=document.getElementById("active-filter-bar");bar.classList.toggle("visible",!(activeRegion==="all"&&activeType==="all-type"));var parts=[];if(activeRegion!=="all")parts.push(activeRegion.replace("-"," ").toUpperCase());if(activeType!=="all-type")parts.push(activeType.toUpperCase());document.getElementById("active-filter-label").textContent=parts.join(" + ")||"All Posts";}
-window.addEventListener("DOMContentLoaded",function(){var total=document.querySelectorAll(".post-card").length;document.getElementById("post-count").textContent=total+" dispatches";});
+document.getElementById("ld").textContent=new Date().toLocaleDateString("en-US",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+var AR="all",AT="all";
+function sr(v,el){AR=v;document.querySelectorAll("#rp .pill").forEach(function(p){p.className="pill"});el.className="pill "+(v==="all"?"on-all":"on");go();}
+function st(v,el){AT=v;document.querySelectorAll("#tp .pill").forEach(function(p){p.className="pill"});el.className="pill "+(v==="all"?"on-all":"on");go();}
+function go(){var n=0;document.querySelectorAll(".card").forEach(function(c){var ok=(AR==="all"||c.dataset.r===AR)&&(AT==="all"||c.dataset.t===AT);c.classList.toggle("hide",!ok);if(ok)n++;});document.getElementById("cnt").textContent=n+" dispatch"+(n!==1?"es":"");document.getElementById("empty").className="empty"+(n===0?" show":"");}
+window.addEventListener("DOMContentLoaded",function(){var n=document.querySelectorAll(".card").length;document.getElementById("cnt").textContent=n+" dispatches";});
 </script>
