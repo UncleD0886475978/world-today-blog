@@ -112,7 +112,7 @@ footer{background:#0d0d0d;color:#555;text-align:center;padding:20px;font-size:0.
         <span class="cat-badge cat-{{ t }}">{{ post.categories[0] }}</span>
         <span class="card-region">{{ r | replace:"-"," " | upcase }}</span>
       </div>
-      <div class="card-date">{{ post.date | date: "%B %-d, %Y &middot; %H:%M UTC" }}</div>
+      <div class="card-date">{{ post.date | date: "%B %d, %Y &middot; %H:%M UTC" }}</div>
       <div class="card-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
       {% if post.description %}<p class="card-desc">{{ post.description }}</p>{% elsif post.excerpt %}<p class="card-desc">{{ post.excerpt | strip_html | truncatewords: 22 }}</p>{% endif %}
       <a class="card-more" href="{{ post.url | prepend: site.baseurl }}">Read Dispatch &rarr;</a>
