@@ -19,3 +19,4 @@ defaults:
       path: "index.html"
     values:
       layout: bare
+safe: false
