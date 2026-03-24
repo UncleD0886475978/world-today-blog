@@ -6,7 +6,7 @@ categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "A significant new offensive by Russian forces in Ukraine's eastern Donbas region has intensified fighting, drawing swift international condemnation and reigniting debates over military aid and diploma"
 ---
-
+{% raw %}
 Kyiv, Ukraine – March 23, 2026 – The fragile calm that had settled over parts of Ukraine's eastern front has been shattered by a major new offensive launched by Russian forces. Reports from military analysts and Ukrainian officials indicate a concerted push across multiple axes in the Donetsk region, targeting key strategic strongholds and threatening to unravel months of positional warfare. The escalation has immediately sent shockwaves across global capitals, reigniting fears of a prolonged and more brutal phase of the conflict.
 
 ## Escalation in the East
@@ -30,3 +30,4 @@ The renewed fighting has immediately exacerbated the humanitarian situation in e
 This latest escalation carries profound geopolitical implications. It tests the resolve of Ukraine's Western allies, many of whom are grappling with domestic political pressures and 'aid fatigue.' The timing of the offensive, coinciding with a period of heightened global economic uncertainty, suggests a calculated move by Russia to exploit perceived divisions and vulnerabilities within the Western alliance. Furthermore, the conflict's impact on global energy markets and food security is once again a primary concern, with commodity prices showing immediate upward trends following the news.
 
 The renewed offensive signifies a critical juncture in the ongoing conflict. It tests the resilience of Ukrainian forces, pushes global diplomacy to its limits, and underscores the enduring human cost of a war that shows no immediate signs of abating. The coming weeks will be crucial in determining whether Ukraine can withstand this latest assault and whether its international partners can deliver the decisive support needed to alter the conflict's trajectory.
+{% endraw %}

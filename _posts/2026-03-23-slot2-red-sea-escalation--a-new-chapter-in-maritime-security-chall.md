@@ -6,7 +6,7 @@ categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "Tensions in the Red Sea have reached a critical new phase following a series of sophisticated attacks on commercial shipping lanes, prompting a re-evaluation of international naval strategies. This de"
 ---
-
+{% raw %}
 Monday, March 23, 2026
 
 ### Renewed Attacks Test International Resolve
@@ -30,3 +30,4 @@ Geopolitically, the situation is testing the cohesion and resolve of internation
 ### A Critical Juncture for Global Maritime Security
 
 The international community now faces a critical juncture. The current defensive posture, while intercepting many threats, has not fully deterred the perpetrators or prevented the evolution of their tactics. There is growing debate over whether a more robust and comprehensive strategy, potentially including direct action against launch sites or deeper engagement in regional political solutions, is necessary. However, such escalation carries inherent risks of broadening the conflict. The Red Sea crisis, therefore, is not merely a challenge to maritime security; it is a profound test of international cooperation, strategic foresight, and the collective will to safeguard the arteries of global trade against increasingly sophisticated and determined threats.
+{% endraw %}
