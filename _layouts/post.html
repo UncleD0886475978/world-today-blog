@@ -1,31 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ page.title }} | The World Today</title>
-<meta name="description" content="{{ page.description | default: site.description }}">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Georgia,serif;max-width:800px;margin:40px auto;padding:0 20px;line-height:1.8;color:#222;background:#f4f1eb}
-a.back{display:inline-block;margin-bottom:24px;color:#c0392b;font-size:0.85rem;font-family:sans-serif;text-decoration:none;border-bottom:1px solid #c0392b}
-.cat{background:#c0392b;color:#fff;font-size:0.65rem;font-weight:700;padding:3px 10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;display:inline-block}
-h1{font-size:2rem;line-height:1.2;margin:12px 0}
-.meta{color:#888;font-size:0.82rem;margin:12px 0 24px;font-family:sans-serif}
-.lead{font-size:1.05rem;color:#555;font-style:italic;border-left:3px solid #c0392b;padding-left:16px;margin-bottom:24px}
-hr{border:none;border-top:1px solid #ddd;margin:24px 0}
-h2{font-size:1.25rem;margin:2rem 0 0.75rem;border-left:3px solid #c0392b;padding-left:10px}
-p{margin-bottom:1.2rem}
-</style>
-</head>
-<body>
-<a class="back" href="{{ site.baseurl }}/">&larr; The World Today</a>
-<div><span class="cat">{{ page.categories[0] }}</span></div>
-<h1>{{ page.title }}</h1>
-<div class="meta">{{ page.date | date: "%B %d, %Y" }} &nbsp;&middot;&nbsp; {{ page.author }}</div>
-{% if page.description %}<p class="lead">{{ page.description }}</p><hr>{% endif %}
+---
+layout: default
+---
+{% assign cat = page.categories[0] %}
+{% if cat == "Politics" %}{% assign stripe = "var(--r-politics)" %}{% elsif cat == "Geopolitics" %}{% assign stripe = "var(--r-geo)" %}{% elsif cat == "Conflict & Security" %}{% assign stripe = "var(--r-conflict)" %}{% elsif cat == "History & Analysis" %}{% assign stripe = "var(--r-history)" %}{% elsif cat == "Sports" %}{% assign stripe = "var(--r-sports)" %}{% else %}{% assign stripe = "var(--accent)" %}{% endif %}
+<div class="post-hero"><div class="post-hero-inner">
+<div class="hero-tag" style="color:{{ stripe }};border-color:{{ stripe }}">{{ cat }}</div>
+<h1 class="post-title">{{ page.title }}</h1>
+<div class="post-meta-bar"><span>{{ page.date | date: "%B %d, %Y" }}</span><span class="sep">·</span><span>{{ page.author | default: site.author }}</span></div>
+{% if page.excerpt %}<p class="post-excerpt">{{ page.excerpt | strip_html | truncate: 220 }}</p>{% endif %}
+</div></div>
+<div class="post-body-wrap">
+<article class="post-content">
+<a href="{{ site.baseurl }}/" style="display:inline-block;margin-bottom:1.5rem;font-family:var(--f-ui);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);">← All Stories</a>
 {{ content }}
-<br><br>
-<a class="back" href="{{ site.baseurl }}/">&larr; Back to all stories</a>
-</body>
-</html>
+</article>
+<aside class="sidebar">
+<div class="sidebar-card"><h4>Latest Stories</h4><ul class="sidebar-list">{% for post in site.posts limit:6 %}{% unless post.url == page.url %}<li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | truncate: 65 }}</a><time>{{ post.date | date: "%b %d" }}</time></li>{% endunless %}{% endfor %}</ul></div>
+<div class="sidebar-card" style="background:var(--accent);border-color:var(--accent);"><h4 style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.2)">Newsletter</h4><p style="font-size:.82rem;color:#fff;line-height:1.55;margin-bottom:.75rem">Daily briefings on Substack — 60 words, stories that matter.</p><a href="https://substack.com" target="_blank" style="display:block;background:#fff;color:var(--accent);font-family:var(--f-ui);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:.55rem;border-radius:2px;">Subscribe Free →</a></div>
+</aside>
+</div>

@@ -1,5 +1,5 @@
 title: "The World Today"
-description: "History, Geopolitics & Current Affairs — Updated Daily"
+description: "Independent global journalism covering geopolitics, conflict, history, politics, and sports."
 author: "The World Today Editorial"
 url: "https://UncleD0886475978.github.io"
 baseurl: "/world-today-blog"
@@ -9,9 +9,15 @@ permalink: /:year/:month/:day/:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+include:
+  - _pages
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: post
+  - scope:
+      path: "_pages"
+    values:
+      layout: default

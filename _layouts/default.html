@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | truncate: 160 }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
+</head>
+<body>
+<div class="ticker-bar">
+  <div class="ticker-label">Breaking</div>
+  <div class="ticker-scroll">
+    <div class="ticker-track">
+      {% for post in site.posts limit:8 %}<span class="tick">{{ post.title }}</span>{% endfor %}
+      {% for post in site.posts limit:8 %}<span class="tick">{{ post.title }}</span>{% endfor %}
+    </div>
+  </div>
+</div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="hamburger-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="{{ site.baseurl }}/" class="masthead-link">
+      <span class="masthead-kicker">Est. 2026</span>
+      <span class="masthead-name">The World <em>Today</em></span>
+    </a>
+    <div class="header-right">
+      <button class="theme-btn" id="themeToggle">☀ Theme</button>
+      <div class="header-date" id="headerDate"></div>
+    </div>
+  </div>
+</header>
+<nav class="section-nav">
+  <div class="section-nav-inner">
+    <a class="snav-item" href="{{ site.baseurl }}/">All</a>
+    <a class="snav-item" href="{{ site.baseurl }}/politics/">Politics</a>
+    <a class="snav-item" href="{{ site.baseurl }}/geopolitics/">Geopolitics</a>
+    <a class="snav-item" href="{{ site.baseurl }}/conflict/">Conflict</a>
+    <a class="snav-item" href="{{ site.baseurl }}/sports/">Sports</a>
+    <a class="snav-item" href="{{ site.baseurl }}/history/">History</a>
+    <a class="snav-item" href="{{ site.baseurl }}/archive/">Archive</a>
+  </div>
+</nav>
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="side-menu" id="sideMenu">
+  <div class="menu-header"><span class="menu-title">The World Today</span><button class="menu-close" id="menuClose">✕</button></div>
+  <div class="menu-section">
+    <div class="menu-section-label">Sections</div>
+    <a class="menu-link" href="{{ site.baseurl }}/"><span class="menu-dot" style="background:#888"></span>All Stories</a>
+    <a class="menu-link" href="{{ site.baseurl }}/politics/"><span class="menu-dot" style="background:var(--r-politics)"></span>Politics</a>
+    <a class="menu-link" href="{{ site.baseurl }}/geopolitics/"><span class="menu-dot" style="background:var(--r-geo)"></span>Geopolitics</a>
+    <a class="menu-link" href="{{ site.baseurl }}/conflict/"><span class="menu-dot" style="background:var(--r-conflict)"></span>Conflict &amp; Security</a>
+    <a class="menu-link" href="{{ site.baseurl }}/history/"><span class="menu-dot" style="background:var(--r-history)"></span>History &amp; Analysis</a>
+  </div>
+  <div class="menu-section">
+    <div class="menu-section-label">Sports</div>
+    <a class="menu-link" href="{{ site.baseurl }}/sports/"><span class="menu-dot" style="background:var(--r-sports)"></span>All Sports</a>
+    <a class="menu-link" href="{{ site.baseurl }}/sports/soccer/"><span class="menu-dot" style="background:var(--r-sports)"></span>⚽ Soccer / Football</a>
+    <a class="menu-link" href="{{ site.baseurl }}/sports/basketball/"><span class="menu-dot" style="background:var(--r-sports)"></span>🏀 Basketball</a>
+    <a class="menu-link" href="{{ site.baseurl }}/sports/world-cup/"><span class="menu-dot" style="background:var(--r-sports)"></span>🏆 World Cup</a>
+    <a class="menu-link" href="{{ site.baseurl }}/sports/caf/"><span class="menu-dot" style="background:var(--r-africa)"></span>🌍 CAF / AFCON</a>
+    <a class="menu-link" href="{{ site.baseurl }}/sports/champions-league/"><span class="menu-dot" style="background:var(--r-europe)"></span>⭐ Champions League</a>
+    <a class="menu-link" href="{{ site.baseurl }}/sports/clubs/"><span class="menu-dot" style="background:var(--r-sports)"></span>🏟 Club Teams</a>
+  </div>
+  <div class="menu-section">
+    <div class="menu-section-label">Regions</div>
+    <a class="menu-link" href="{{ site.baseurl }}/region/africa/"><span class="menu-dot" style="background:var(--r-africa)"></span>Africa</a>
+    <a class="menu-link" href="{{ site.baseurl }}/region/europe/"><span class="menu-dot" style="background:var(--r-europe)"></span>Europe</a>
+    <a class="menu-link" href="{{ site.baseurl }}/region/asia/"><span class="menu-dot" style="background:var(--r-asia)"></span>Asia</a>
+    <a class="menu-link" href="{{ site.baseurl }}/region/americas/"><span class="menu-dot" style="background:var(--r-americas)"></span>Americas</a>
+    <a class="menu-link" href="{{ site.baseurl }}/region/middle-east/"><span class="menu-dot" style="background:var(--r-mideast)"></span>Middle East</a>
+    <a class="menu-link" href="{{ site.baseurl }}/region/oceania/"><span class="menu-dot" style="background:var(--r-oceania)"></span>Oceania</a>
+  </div>
+  <div class="menu-section">
+    <div class="menu-section-label">More</div>
+    <a class="menu-link" href="{{ site.baseurl }}/archive/"><span class="menu-dot" style="background:#666"></span>📁 Archive</a>
+    <a class="menu-link" href="https://substack.com" target="_blank"><span class="menu-dot" style="background:#F75C03"></span>Substack Newsletter</a>
+    <a class="menu-link" href="https://twitter.com" target="_blank"><span class="menu-dot" style="background:#1DA1F2"></span>X / Twitter</a>
+  </div>
+  <div class="theme-panel">
+    <div class="theme-panel-label">Reading Mode</div>
+    <div class="theme-swatches">
+      <button class="swatch active" data-t="light" title="Light" onclick="setTheme('light')"></button>
+      <button class="swatch" data-t="dark" title="Dark" onclick="setTheme('dark')"></button>
+      <button class="swatch" data-t="sepia" title="Sepia" onclick="setTheme('sepia')"></button>
+      <button class="swatch" data-t="ocean" title="Ocean" onclick="setTheme('ocean')"></button>
+    </div>
+    <div class="theme-panel-label" style="margin-top:.85rem">Text Size</div>
+    <div class="font-controls">
+      <button class="font-btn" onclick="adjustFont(-1)">A−</button>
+      <button class="font-btn" onclick="adjustFont(0)">A</button>
+      <button class="font-btn" onclick="adjustFont(1)">A+</button>
+    </div>
+  </div>
+</nav>
+{{ content }}
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="footer-name">The World Today</div><p>Independent global journalism. Updated daily.</p></div>
+    <div class="footer-col"><h4>Sections</h4><ul><li><a href="{{ site.baseurl }}/politics/">Politics</a></li><li><a href="{{ site.baseurl }}/geopolitics/">Geopolitics</a></li><li><a href="{{ site.baseurl }}/conflict/">Conflict</a></li><li><a href="{{ site.baseurl }}/history/">History</a></li><li><a href="{{ site.baseurl }}/sports/">Sports</a></li></ul></div>
+    <div class="footer-col"><h4>Sports</h4><ul><li><a href="{{ site.baseurl }}/sports/soccer/">Soccer</a></li><li><a href="{{ site.baseurl }}/sports/basketball/">Basketball</a></li><li><a href="{{ site.baseurl }}/sports/world-cup/">World Cup</a></li><li><a href="{{ site.baseurl }}/sports/caf/">CAF / AFCON</a></li><li><a href="{{ site.baseurl }}/sports/champions-league/">UCL</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://substack.com" target="_blank">Substack</a></li><li><a href="https://twitter.com" target="_blank">X / Twitter</a></li><li><a href="{{ site.baseurl }}/archive/">Archive</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© {{ site.time | date: "%Y" }} The World Today.</span><div class="social-links"><a href="https://substack.com" target="_blank">SUBSTACK</a><a href="https://twitter.com" target="_blank">X/TWITTER</a></div></div>
+</footer>
+<script>
+function setTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('wt-theme',t);document.querySelectorAll('.swatch').forEach(s=>s.classList.toggle('active',s.dataset.t===t))}
+(function(){setTheme(localStorage.getItem('wt-theme')||'light')})();
+let fs=parseInt(localStorage.getItem('wt-fs')||'16');
+document.documentElement.style.setProperty('--fs',fs+'px');
+function adjustFont(d){if(d===0)fs=16;else fs=Math.min(22,Math.max(13,fs+d*2));document.documentElement.style.setProperty('--fs',fs+'px');localStorage.setItem('wt-fs',fs)}
+const menuBtn=document.getElementById('menuBtn'),sideMenu=document.getElementById('sideMenu'),overlay=document.getElementById('menuOverlay'),menuClose=document.getElementById('menuClose');
+function openMenu(){sideMenu.classList.add('open');overlay.classList.add('open');menuBtn.classList.add('open')}
+function closeMenu(){sideMenu.classList.remove('open');overlay.classList.remove('open');menuBtn.classList.remove('open')}
+menuBtn.addEventListener('click',()=>sideMenu.classList.contains('open')?closeMenu():openMenu());
+menuClose.addEventListener('click',closeMenu);overlay.addEventListener('click',closeMenu);
+document.getElementById('themeToggle').addEventListener('click',()=>{const themes=['light','dark','sepia','ocean'],cur=document.documentElement.getAttribute('data-theme');setTheme(themes[(themes.indexOf(cur)+1)%themes.length])});
+const d=new Date();document.getElementById('headerDate').innerHTML=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'})+'<br>'+d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+document.querySelectorAll('.sport-tab').forEach(tab=>{tab.addEventListener('click',()=>{const g=tab.closest('.sports-section');g.querySelectorAll('.sport-tab').forEach(t=>t.classList.remove('active'));g.querySelectorAll('.sport-panel').forEach(p=>p.classList.remove('active'));tab.classList.add('active');const tgt=g.querySelector('#panel-'+tab.dataset.sport);if(tgt)tgt.classList.add('active')})});
+</script>
+</body>
+</html>

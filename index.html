@@ -1,42 +1,43 @@
 ---
-layout: bare
+layout: default
 title: The World Today
 ---
-<style>
-body{font-family:Georgia,serif;background:#f4f1eb;color:#111;margin:0;padding:0}
-.hdr{background:#0d0d0d;padding:20px 32px;color:#fff}
-.hdr h1{font-size:1.8rem;font-weight:900}
-.hdr p{color:#aaa;font-size:0.8rem;margin-top:4px}
-.posts{max-width:900px;margin:0 auto;padding:32px 20px}
-.card{background:#fff;border:1px solid #ddd;border-top:3px solid #c0392b;padding:20px;margin-bottom:20px}
-.cat{background:#c0392b;color:#fff;font-size:0.65rem;font-weight:700;padding:2px 8px;text-transform:uppercase;letter-spacing:1px}
-.date{color:#999;font-size:0.78rem;margin:8px 0}
-.title{font-size:1.15rem;font-weight:700;margin-bottom:8px}
-.title a{color:#111;text-decoration:none}
-.title a:hover{color:#c0392b}
-.desc{color:#555;font-size:0.88rem;line-height:1.6}
-.more{color:#c0392b;font-size:0.78rem;font-weight:700;text-decoration:none;display:inline-block;margin-top:10px}
-footer{background:#111;color:#666;text-align:center;padding:16px;font-size:0.72rem}
-</style>
-
-<div class="hdr">
-  <h1>The World Today</h1>
-  <p>Independent Global Journalism</p>
-</div>
-
-<div class="posts">
-  {% for post in site.posts limit:30 %}
-  <div class="card">
-    <span class="cat">{{ post.categories[0] }}</span>
-    <div class="date">{{ post.date | date: "%B %d, %Y" }}</div>
-    <div class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
-    {% if post.description %}<p class="desc">{{ post.description }}</p>{% endif %}
-    <a class="more" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
-  </div>
-  {% endfor %}
-</div>
-
-<footer>The World Today - {{ site.time | date: "%Y" }}</footer>
-
-</body>
-</html>
+{% assign top_post = site.posts | first %}
+{% if top_post %}{% assign cat0 = top_post.categories[0] %}{% if cat0 == "Politics" %}{% assign hs = "var(--r-politics)" %}{% elsif cat0 == "Geopolitics" %}{% assign hs = "var(--r-geo)" %}{% elsif cat0 == "Conflict & Security" %}{% assign hs = "var(--r-conflict)" %}{% elsif cat0 == "Sports" %}{% assign hs = "var(--r-sports)" %}{% else %}{% assign hs = "var(--accent)" %}{% endif %}
+<div class="hero"><div class="hero-inner">
+<div class="hero-tag" style="color:{{ hs }};border-color:{{ hs }}">{{ cat0 }} · Latest</div>
+<h1 class="hero-title"><a href="{{ top_post.url | prepend: site.baseurl }}">{{ top_post.title }}</a></h1>
+{% if top_post.excerpt %}<p class="hero-desc">{{ top_post.excerpt | strip_html | truncate: 200 }}</p>{% endif %}
+<div class="hero-meta"><span>{{ top_post.date | date: "%B %d, %Y" }}</span><span class="sep">·</span><span>{{ top_post.author | default: "The World Today Editorial" }}</span><a class="read-more" href="{{ top_post.url | prepend: site.baseurl }}">Read Full Story →</a></div>
+</div></div>{% endif %}
+<main class="main-wrap">
+{% assign politics_posts = site.posts | where_exp: "p", "p.categories contains 'Politics'" %}
+{% if politics_posts.size > 0 %}
+<section class="section-block" id="politics"><div class="section-head"><div class="section-stripe" style="background:var(--r-politics)"></div><h2>Politics</h2><a class="section-more" href="{{ site.baseurl }}/politics/">All →</a></div>
+{% assign pol_lead = politics_posts | first %}<div class="posts-lead"><div class="card-lead" style="--stripe-color:var(--r-politics)"><div class="card-tag">Politics</div><h3><a href="{{ pol_lead.url | prepend: site.baseurl }}">{{ pol_lead.title }}</a></h3><p>{{ pol_lead.excerpt | strip_html | truncate: 180 }}</p><time>{{ pol_lead.date | date: "%B %d, %Y" }}</time></div>
+<div style="display:flex;flex-direction:column;gap:1rem;">{% for post in politics_posts limit:3 offset:1 %}<div class="card" style="--stripe-color:var(--r-politics)"><div class="card-tag">Politics</div><h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3><time>{{ post.date | date: "%B %d, %Y" }}</time></div>{% endfor %}</div></div></section>
+{% endif %}
+{% assign geo_posts = site.posts | where_exp: "p", "p.categories contains 'Geopolitics'" %}
+{% if geo_posts.size > 0 %}
+<section class="section-block" id="geopolitics"><div class="section-head"><div class="section-stripe" style="background:var(--r-geo)"></div><h2>Geopolitics</h2><a class="section-more" href="{{ site.baseurl }}/geopolitics/">All →</a></div>
+<div class="posts-grid">{% for post in geo_posts limit:6 %}<div class="card" style="--stripe-color:var(--r-geo)"><div class="card-tag">Geopolitics</div><h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3><p>{{ post.excerpt | strip_html | truncate: 110 }}</p><time>{{ post.date | date: "%B %d, %Y" }}</time></div>{% endfor %}</div></section>
+{% endif %}
+{% assign conflict_posts = site.posts | where_exp: "p", "p.categories contains 'Conflict & Security'" %}
+{% if conflict_posts.size > 0 %}
+<section class="section-block" id="conflict"><div class="section-head"><div class="section-stripe" style="background:var(--r-conflict)"></div><h2>Conflict &amp; Security</h2><a class="section-more" href="{{ site.baseurl }}/conflict/">All →</a></div>
+<div class="posts-grid">{% for post in conflict_posts limit:6 %}<div class="card" style="--stripe-color:var(--r-conflict)"><div class="card-tag">Conflict &amp; Security</div><h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3><p>{{ post.excerpt | strip_html | truncate: 110 }}</p><time>{{ post.date | date: "%B %d, %Y" }}</time></div>{% endfor %}</div></section>
+{% endif %}
+<section class="section-block sports-section" id="sports"><div class="section-head"><div class="section-stripe" style="background:var(--r-sports)"></div><h2>Sports</h2><a class="section-more" href="{{ site.baseurl }}/sports/">All Sports →</a></div>
+<div class="sports-tabs"><button class="sport-tab active" data-sport="all">All Sports</button><button class="sport-tab" data-sport="soccer">⚽ Soccer</button><button class="sport-tab" data-sport="basketball">🏀 Basketball</button><button class="sport-tab" data-sport="worldcup">🏆 World Cup</button><button class="sport-tab" data-sport="caf">🌍 CAF/AFCON</button><button class="sport-tab" data-sport="ucl">⭐ Champions League</button><button class="sport-tab" data-sport="clubs">🏟 Club Teams</button></div>
+{% assign sports_posts = site.posts | where_exp: "p", "p.categories contains 'Sports'" %}
+<div class="sport-panel active" id="panel-all">{% if sports_posts.size > 0 %}<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;">{% for post in sports_posts limit:6 %}<div class="card" style="--stripe-color:var(--r-sports)"><div class="card-tag">{{ post.sport | default: "Sports" }}</div><h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3><time>{{ post.date | date: "%B %d, %Y" }}</time></div>{% endfor %}</div>{% else %}<p style="padding:2rem;text-align:center;color:var(--ink4);font-family:var(--f-ui);font-size:.85rem;">Sports coverage coming soon — tag posts with <code>categories: [Sports]</code></p>{% endif %}</div>
+{% for sid in "soccer,basketball,worldcup,caf,ucl,clubs" | split: "," %}<div class="sport-panel" id="panel-{{ sid }}">{% assign sp = site.posts | where: "sport", sid %}{% if sp.size > 0 %}{% for post in sp limit:6 %}<div class="card" style="--stripe-color:var(--r-sports)"><div class="card-tag">{{ sid }}</div><h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3><time>{{ post.date | date: "%b %d, %Y" }}</time></div>{% endfor %}{% else %}<p style="padding:2rem;text-align:center;color:var(--ink4);font-family:var(--f-ui);font-size:.85rem;">No {{ sid }} stories yet.</p>{% endif %}</div>{% endfor %}
+</section>
+{% assign history_posts = site.posts | where_exp: "p", "p.categories contains 'History & Analysis'" %}
+{% if history_posts.size > 0 %}
+<section class="section-block" id="history"><div class="section-head"><div class="section-stripe" style="background:var(--r-history)"></div><h2>History &amp; Analysis</h2><a class="section-more" href="{{ site.baseurl }}/history/">All →</a></div>
+<div class="posts-grid">{% for post in history_posts limit:6 %}<div class="card" style="--stripe-color:var(--r-history)"><div class="card-tag">History &amp; Analysis</div><h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3><p>{{ post.excerpt | strip_html | truncate: 110 }}</p><time>{{ post.date | date: "%B %d, %Y" }}</time></div>{% endfor %}</div></section>
+{% endif %}
+<section class="section-block"><div class="section-head"><div class="section-stripe" style="background:var(--ink4)"></div><h2>All Recent Stories</h2><a class="section-more" href="{{ site.baseurl }}/archive/">Full Archive →</a></div>
+<div class="posts-grid">{% for post in site.posts limit:12 %}{% assign pcat = post.categories[0] %}{% if pcat == "Politics" %}{% assign pc = "var(--r-politics)" %}{% elsif pcat == "Geopolitics" %}{% assign pc = "var(--r-geo)" %}{% elsif pcat == "Conflict & Security" %}{% assign pc = "var(--r-conflict)" %}{% elsif pcat == "Sports" %}{% assign pc = "var(--r-sports)" %}{% elsif pcat == "History & Analysis" %}{% assign pc = "var(--r-history)" %}{% else %}{% assign pc = "var(--ink4)" %}{% endif %}<div class="card" style="--stripe-color:{{ pc }}"><div class="card-tag">{{ pcat }}</div><h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3><p>{{ post.excerpt | strip_html | truncate: 100 }}</p><time>{{ post.date | date: "%B %d, %Y" }}</time></div>{% endfor %}</div></section>
+</main>
