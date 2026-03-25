@@ -1,0 +1,321 @@
+name: Auto Image + Social Push
+
+on:
+  push:
+    paths:
+      - '_posts/**'
+    branches: [main]
+
+jobs:
+  auto_image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests python-frontmatter cloudinary pillow
+
+      - name: Fetch missing images for new posts
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
+        run: |
+          python3 << 'PYEOF'
+          import os, re, json, requests, frontmatter, cloudinary
+          import cloudinary.uploader
+          from pathlib import Path
+
+          UNSPLASH_KEY = os.environ.get("UNSPLASH_ACCESS_KEY","")
+          CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL","")
+
+          CATEGORY_KEYWORDS = {
+              "Geopolitics":        "world diplomacy geopolitics",
+              "Conflict & Security":"military security conflict",
+              "History & Analysis": "history newspaper archive",
+              "Politics":           "politics government capitol",
+              "Sports":             "sports stadium action",
+              "soccer":             "soccer football match",
+              "basketball":         "basketball NBA court",
+              "worldcup":           "world cup football",
+              "caf":                "africa football AFCON",
+              "ucl":                "champions league football",
+              "clubs":              "football club team",
+          }
+
+          def get_keywords(title, cat, sport=None):
+              base = CATEGORY_KEYWORDS.get(sport or cat, "world news")
+              stops = {"with","from","that","this","have","will","been","they","their","into","about","over","after","amid","also"}
+              words = [w for w in re.findall(r'[a-zA-Z]{4,}', title.lower()) if w not in stops]
+              return f"{base} {' '.join(words[:3])}"
+
+          def fetch_image_url(query):
+              if UNSPLASH_KEY:
+                  r = requests.get(
+                      "https://api.unsplash.com/photos/random",
+                      params={"query": query, "orientation": "landscape"},
+                      headers={"Authorization": f"Client-ID {UNSPLASH_KEY}"},
+                      timeout=10
+                  )
+                  if r.ok:
+                      d = r.json()
+                      return d["urls"]["regular"], d["urls"]["small"]
+              # fallback
+              q = query.replace(" ", ",")
+              return f"https://source.unsplash.com/1200x630/?{q}", None
+
+          def upload_to_cloudinary(url, public_id):
+              if not CLOUDINARY_URL:
+                  return url
+              try:
+                  cloudinary.config(cloudinary_url=CLOUDINARY_URL)
+                  res = cloudinary.uploader.upload(
+                      url,
+                      public_id=f"world-today/{public_id}",
+                      transformation=[{"width":1200,"height":630,"crop":"fill"}]
+                  )
+                  return res["secure_url"]
+              except Exception as e:
+                  print(f"Cloudinary error: {e}")
+                  return url
+
+          posts_dir = Path("_posts")
+          images_dir = Path("assets/images")
+          images_dir.mkdir(exist_ok=True)
+          updated = []
+
+          for post_file in sorted(posts_dir.glob("*.md"), reverse=True):
+              post = frontmatter.load(post_file)
+              if post.get("image"):
+                  continue
+              
+              title = str(post.get("title",""))
+              cats = post.get("categories",[])
+              cat = cats[0] if cats else ""
+              sport = post.get("sport","")
+              slug = post_file.stem
+
+              keywords = get_keywords(title, cat, sport)
+              print(f"Fetching image for: {post_file.name} → '{keywords}'")
+              
+              full_url, thumb_url = fetch_image_url(keywords)
+              
+              # Upload large image to Cloudinary
+              cdn_url = upload_to_cloudinary(full_url, slug)
+              
+              # Save thumbnail locally
+              thumb_path = None
+              if thumb_url:
+                  try:
+                      r = requests.get(thumb_url, timeout=10)
+                      if r.ok:
+                          thumb_path = images_dir / f"{slug}.jpg"
+                          thumb_path.write_bytes(r.content)
+                          print(f"  ✓ Saved thumbnail")
+                  except:
+                      pass
+              
+              post["image"] = cdn_url
+              post["image_thumb"] = f"/world-today-blog/assets/images/{slug}.jpg" if thumb_path else cdn_url
+              
+              with open(post_file, "wb") as f:
+                  frontmatter.dump(post, f)
+              
+              updated.append(str(post_file))
+              print(f"  ✓ Image added: {cdn_url[:60]}...")
+
+          if updated:
+              print(f"\nUpdated {len(updated)} posts")
+              with open(os.environ.get("GITHUB_OUTPUT",""), "a") as f:
+                  f.write(f"updated=true\n")
+          else:
+              print("No posts needed images")
+          PYEOF
+
+      - name: Commit images back to repo
+        run: |
+          git config user.name "World Today Bot"
+          git config user.email "bot@worldtoday.com"
+          git add assets/images/ _posts/
+          git diff --staged --quiet || git commit -m "Auto: add images to posts [skip ci]"
+          git push
+
+  social_push:
+    runs-on: ubuntu-latest
+    needs: auto_image
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests python-frontmatter tweepy
+
+      - name: Get latest post and push to social
+        env:
+          TWITTER_API_KEY:            ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET:         ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN:       ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET:      ${{ secrets.TWITTER_ACCESS_SECRET }}
+          FACEBOOK_PAGE_ID:           ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_TOKEN:        ${{ secrets.FACEBOOK_PAGE_TOKEN }}
+          THREADS_USER_ID:            ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN:       ${{ secrets.THREADS_ACCESS_TOKEN }}
+          SITE_URL: "https://UncleD0886475978.github.io/world-today-blog"
+        run: |
+          python3 << 'PYEOF'
+          import os, re, requests, frontmatter
+          from pathlib import Path
+          from datetime import datetime, timezone, timedelta
+
+          SITE_URL = os.environ["SITE_URL"]
+
+          def get_latest_post():
+              posts = sorted(Path("_posts").glob("*.md"), reverse=True)
+              if not posts:
+                  return None, None
+              post = frontmatter.load(posts[0])
+              slug = posts[0].stem
+              # build URL from permalink pattern /:year/:month/:day/:title/
+              parts = slug.split("-", 3)
+              if len(parts) >= 4:
+                  url = f"{SITE_URL}/{parts[0]}/{parts[1]}/{parts[2]}/{parts[3]}/"
+              else:
+                  url = SITE_URL
+              return post, url
+
+          def make_caption(post, url):
+              title = post.get("title","")
+              excerpt = post.get("excerpt","") or ""
+              excerpt = re.sub(r'<[^>]+>','', excerpt)
+              # Build 60-word max caption
+              words = excerpt.split()
+              short = " ".join(words[:45]) + ("..." if len(words)>45 else "")
+              cat = post.get("categories",["News"])
+              cat = cat[0] if isinstance(cat, list) else cat
+              tag = "#" + re.sub(r'[^a-zA-Z]','', cat)
+              return f"{title}\n\n{short}\n\n{tag} #WorldToday\n\n{url}"
+
+          post, url = get_latest_post()
+          if not post:
+              print("No posts found")
+              exit(0)
+
+          caption = make_caption(post, url)
+          image_url = post.get("image","")
+          print(f"Posting: {post.get('title','')[:60]}")
+          print(f"Image: {image_url[:80] if image_url else 'none'}")
+
+          # ── TWITTER/X ──────────────────────────────────────────────────
+          TW_KEY    = os.environ.get("TWITTER_API_KEY","")
+          TW_SECRET = os.environ.get("TWITTER_API_SECRET","")
+          TW_TOKEN  = os.environ.get("TWITTER_ACCESS_TOKEN","")
+          TW_TSECRET= os.environ.get("TWITTER_ACCESS_SECRET","")
+
+          if all([TW_KEY, TW_SECRET, TW_TOKEN, TW_TSECRET]):
+              try:
+                  import tweepy
+                  client = tweepy.Client(
+                      consumer_key=TW_KEY, consumer_secret=TW_SECRET,
+                      access_token=TW_TOKEN, access_token_secret=TW_TSECRET
+                  )
+                  auth = tweepy.OAuth1UserHandler(TW_KEY, TW_SECRET, TW_TOKEN, TW_TSECRET)
+                  api = tweepy.API(auth)
+                  
+                  tweet_text = caption[:270]  # Twitter limit
+                  media_id = None
+                  
+                  if image_url:
+                      try:
+                          img_data = requests.get(image_url, timeout=15).content
+                          with open("/tmp/post_img.jpg","wb") as f:
+                              f.write(img_data)
+                          media = api.media_upload("/tmp/post_img.jpg")
+                          media_id = media.media_id
+                          print("  ✓ Twitter image uploaded")
+                      except Exception as e:
+                          print(f"  ⚠ Twitter image error: {e}")
+                  
+                  r = client.create_tweet(text=tweet_text, media_ids=[media_id] if media_id else None)
+                  print(f"  ✓ Twitter posted: {r.data['id']}")
+              except Exception as e:
+                  print(f"  ✗ Twitter error: {e}")
+          else:
+              print("  ↷ Twitter secrets not configured")
+
+          # ── FACEBOOK ───────────────────────────────────────────────────
+          FB_PAGE_ID    = os.environ.get("FACEBOOK_PAGE_ID","")
+          FB_PAGE_TOKEN = os.environ.get("FACEBOOK_PAGE_TOKEN","")
+
+          if FB_PAGE_ID and FB_PAGE_TOKEN:
+              try:
+                  if image_url:
+                      r = requests.post(
+                          f"https://graph.facebook.com/{FB_PAGE_ID}/photos",
+                          data={"url": image_url, "caption": caption, "access_token": FB_PAGE_TOKEN},
+                          timeout=15
+                      )
+                  else:
+                      r = requests.post(
+                          f"https://graph.facebook.com/{FB_PAGE_ID}/feed",
+                          data={"message": caption, "link": url, "access_token": FB_PAGE_TOKEN},
+                          timeout=15
+                      )
+                  r.raise_for_status()
+                  print(f"  ✓ Facebook posted: {r.json().get('id','')}")
+              except Exception as e:
+                  print(f"  ✗ Facebook error: {e}")
+          else:
+              print("  ↷ Facebook secrets not configured")
+
+          # ── THREADS ────────────────────────────────────────────────────
+          TH_USER_ID = os.environ.get("THREADS_USER_ID","")
+          TH_TOKEN   = os.environ.get("THREADS_ACCESS_TOKEN","")
+
+          if TH_USER_ID and TH_TOKEN:
+              try:
+                  # Step 1: create container
+                  payload = {
+                      "media_type": "IMAGE" if image_url else "TEXT",
+                      "text": caption[:500],
+                      "access_token": TH_TOKEN
+                  }
+                  if image_url:
+                      payload["image_url"] = image_url
+                  
+                  r = requests.post(
+                      f"https://graph.threads.net/v1.0/{TH_USER_ID}/threads",
+                      data=payload, timeout=15
+                  )
+                  r.raise_for_status()
+                  container_id = r.json()["id"]
+                  
+                  # Step 2: publish
+                  import time; time.sleep(5)
+                  r2 = requests.post(
+                      f"https://graph.threads.net/v1.0/{TH_USER_ID}/threads_publish",
+                      data={"creation_id": container_id, "access_token": TH_TOKEN},
+                      timeout=15
+                  )
+                  r2.raise_for_status()
+                  print(f"  ✓ Threads posted: {r2.json().get('id','')}")
+              except Exception as e:
+                  print(f"  ✗ Threads error: {e}")
+          else:
+              print("  ↷ Threads secrets not configured")
+
+          print("\n✅ Social push complete.")
+          PYEOF

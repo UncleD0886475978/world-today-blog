@@ -5,6 +5,9 @@ date: 2026-03-24 19:00:22 +0000
 categories: [Geopolitics]
 author: "The World Today Editorial"
 excerpt: "A new declaration by Beijing establishing a 'maritime ecological protection and research zone' in the contested Spratly Islands has dramatically escalated tensions in the South China Sea. This move, r"
+image: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Cindo%2Cpacific%2Ctensions"
+image_thumb: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Cindo%2Cpacific%2Ctensions"
+
 ---
 
 Tuesday, March 24, 2026, Global Hub.

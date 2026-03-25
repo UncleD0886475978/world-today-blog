@@ -5,6 +5,9 @@ date: 2026-03-22 19:00:25 +0000
 categories: [Geopolitics]
 author: "The World Today Editorial"
 excerpt: "The emergence of the Pan-Asian Economic and Security Partnership (PAESP), a China-led initiative encompassing key Southeast Asian and Central Asian states, marks a significant shift in the Indo-Pacifi"
+image: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Casian%2Cpivot%2Cpower"
+image_thumb: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Casian%2Cpivot%2Cpower"
+
 ---
 Dateline: March 22, 2026, Singapore
 

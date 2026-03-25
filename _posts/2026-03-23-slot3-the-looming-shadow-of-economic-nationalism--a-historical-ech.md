@@ -5,6 +5,9 @@ date: 2026-03-23 07:04:05 +0000
 categories: [History & Analysis]
 author: "The World Today Editorial"
 excerpt: "As global trade tensions escalate in March 2026, driven by competition for critical resources and technological dominance, this analysis draws parallels to the protectionist spirals of the interwar pe"
+image: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Clooming%2Cshadow%2Ceconomic"
+image_thumb: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Clooming%2Cshadow%2Ceconomic"
+
 ---
 Monday, March 23, 2026
 

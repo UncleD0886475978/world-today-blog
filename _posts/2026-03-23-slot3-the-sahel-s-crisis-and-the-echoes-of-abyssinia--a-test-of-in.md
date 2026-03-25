@@ -5,6 +5,9 @@ date: 2026-03-23 17:41:25 +0000
 categories: [History & Analysis]
 author: "The World Today Editorial"
 excerpt: "As international bodies grapple with a worsening humanitarian crisis and displacement in the Sahel region, stark parallels emerge with the League of Nations' failures in the 1930s. This analysis explo"
+image: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Csahel%2Ccrisis%2Cechoes"
+image_thumb: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Csahel%2Ccrisis%2Cechoes"
+
 ---
 
 Monday, March 23, 2026

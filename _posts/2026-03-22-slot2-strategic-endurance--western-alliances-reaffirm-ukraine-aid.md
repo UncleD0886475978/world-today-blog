@@ -5,6 +5,9 @@ date: 2026-03-22 16:25:21 +0000
 categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "As the conflict in Ukraine enters its fourth year, Western nations are once again grappling with the immense challenge of sustaining military and financial aid. A major new commitment under discussion"
+image: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cstrategic%2Cendurance%2Cwestern"
+image_thumb: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cstrategic%2Cendurance%2Cwestern"
+
 ---
 Brussels – Sunday, March 22, 2026 – As the full-scale conflict in Ukraine marks its second anniversary since the 2024 escalation, and enters its fourth year since the initial invasion, the international community finds itself at a critical juncture regarding sustained support for Kyiv. Discussions are intensifying in Brussels and Washington surrounding a comprehensive new aid package, underscoring a recognition that the conflict is far from over and demands a long-term strategic commitment from Western allies.
 

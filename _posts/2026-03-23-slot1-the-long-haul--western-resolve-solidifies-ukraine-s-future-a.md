@@ -5,6 +5,9 @@ date: 2026-03-23 17:37:53 +0000
 categories: [Geopolitics]
 author: "The World Today Editorial"
 excerpt: "As the conflict in Ukraine enters its fifth year, a recent declaration by Western powers signals an unprecedented, long-term commitment to Kyiv's security and reconstruction, fundamentally altering th"
+image: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Clong%2Chaul%2Cwestern"
+image_thumb: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Clong%2Chaul%2Cwestern"
+
 ---
 
 Dateline: Monday, March 23, 2026

@@ -5,6 +5,9 @@ date: 2026-03-23 19:01:59 +0000
 categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "As the full-scale invasion of Ukraine enters its third year, the eastern front remains a brutal theater of attrition. This report examines the current state of the conflict, the evolving nature of int"
+image: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cukraine%2Cenduring%2Ceastern"
+image_thumb: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cukraine%2Cenduring%2Ceastern"
+
 ---
 
 Kyiv, Ukraine – March 23, 2026 – As the calendar turns another page on the full-scale invasion, the eastern front in Ukraine continues to be a crucible of modern warfare. Two years and a month since Russia launched its expanded offensive, the lines of engagement, particularly across the Donbas region, have solidified into a grinding war of attrition, marked by relentless shelling, drone warfare, and fierce infantry battles. The initial hopes for swift victory or decisive counter-offensives have given way to a grim reality of incremental gains and losses, underscoring the enduring resilience of the Ukrainian forces and the sustained, albeit costly, determination of Moscow.

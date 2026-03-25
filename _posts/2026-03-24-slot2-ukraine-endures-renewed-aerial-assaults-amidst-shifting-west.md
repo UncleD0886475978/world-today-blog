@@ -5,6 +5,9 @@ date: 2026-03-24 19:02:06 +0000
 categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "As the conflict in Ukraine enters its third year, a new wave of intense Russian aerial attacks targets critical infrastructure, underscoring the enduring challenges faced by Kyiv. The renewed assault "
+image: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cukraine%2Cendures%2Crenewed"
+image_thumb: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cukraine%2Cendures%2Crenewed"
+
 ---
 
 Kyiv, Ukraine – March 24, 2026 – Ukraine is once again grappling with a significant escalation in Russian aerial bombardment, as a series of coordinated missile and drone strikes targeted energy facilities and other critical infrastructure across the country in the past 48 hours. The renewed assault, described by Ukrainian officials as one of the most intense in months, has plunged parts of several regions into darkness and tested the resilience of the nation's air defense systems, highlighting the protracted and brutal nature of the conflict now well into its third year.

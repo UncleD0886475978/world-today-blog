@@ -5,6 +5,9 @@ date: 2026-03-22 16:27:04 +0000
 categories: [History & Analysis]
 author: "The World Today Editorial"
 excerpt: "As geopolitical tensions rise in key strategic regions, observers are drawing parallels to the 19th-century 'Great Game', where global powers vied for influence without direct confrontation. This anal"
+image: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Cgreat%2Cgame%2Cnavigating"
+image_thumb: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Cgreat%2Cgame%2Cnavigating"
+
 ---
 Sunday, March 22, 2026
 

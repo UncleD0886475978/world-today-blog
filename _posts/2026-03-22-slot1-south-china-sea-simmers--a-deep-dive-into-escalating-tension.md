@@ -5,6 +5,9 @@ date: 2026-03-22 11:59:30 +0000
 categories: [Geopolitics]
 author: "The World Today Editorial"
 excerpt: "An analysis of the recent surge in tensions in the South China Sea, focusing on the latest confrontation between China and the Philippines at Second Thomas Shoal. This piece examines the historical co"
+image: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Csouth%2Cchina%2Csimmers"
+image_thumb: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Csouth%2Cchina%2Csimmers"
+
 ---
 Singapore, Sunday, March 22, 2026
 

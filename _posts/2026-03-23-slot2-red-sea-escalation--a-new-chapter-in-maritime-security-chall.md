@@ -5,6 +5,9 @@ date: 2026-03-23 07:02:24 +0000
 categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "Tensions in the Red Sea have reached a critical new phase following a series of sophisticated attacks on commercial shipping lanes, prompting a re-evaluation of international naval strategies. This de"
+image: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cescalation%2Cchapter%2Cmaritime"
+image_thumb: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cescalation%2Cchapter%2Cmaritime"
+
 ---
 Monday, March 23, 2026
 

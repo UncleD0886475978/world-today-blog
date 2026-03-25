@@ -5,6 +5,9 @@ date: 2026-03-23 19:03:44 +0000
 categories: [History & Analysis]
 author: "The World Today Editorial"
 excerpt: "As crucial peace talks in Geneva falter, the international community faces a stark reminder of the challenges that plagued multilateral efforts in the past. This analysis draws parallels between the c"
+image: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Ccrisis%2Cgeneva%2Cechoes"
+image_thumb: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Ccrisis%2Cgeneva%2Cechoes"
+
 ---
 
 Geneva, Switzerland – March 23, 2026

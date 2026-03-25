@@ -5,6 +5,9 @@ date: 2026-03-24 07:02:23 +0000
 categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "Reports from the front lines in Eastern Europe indicate a significant escalation of fighting, particularly across the Donbas region, as Russian forces launch a renewed offensive push. Ukraine, bolster"
+image: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Ceastern%2Cfront%2Cintensifies"
+image_thumb: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Ceastern%2Cfront%2Cintensifies"
+
 ---
 
 Kyiv, Ukraine – March 24, 2026

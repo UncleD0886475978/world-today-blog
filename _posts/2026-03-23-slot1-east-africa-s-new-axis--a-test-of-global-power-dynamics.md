@@ -5,6 +5,9 @@ date: 2026-03-23 19:00:17 +0000
 categories: [Geopolitics]
 author: "The World Today Editorial"
 excerpt: "A landmark agreement in East Africa, combining significant infrastructure investments with joint military exercises, signals a deepening geopolitical realignment. This analysis explores how a consorti"
+image: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Ceast%2Cafrica%2Caxis"
+image_thumb: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Ceast%2Cafrica%2Caxis"
+
 ---
 
 Dar es Salaam, Tanzania – March 23, 2026 – A pivotal moment in global geopolitics unfolded today in Dar es Salaam, as Tanzania, Mozambique, and Kenya formally inked a multi-billion-dollar infrastructure and development pact. The agreement, largely financed and technically supported by a consortium led by China's Belt and Road Initiative (BRI) financial institutions, outlines ambitious plans for port modernization, railway extensions, and critical mineral processing facilities across the three East African nations. This economic thrust coincides with an ongoing series of joint naval exercises in the Indian Ocean, involving vessels from the signatory African states and the People's Liberation Army Navy (PLAN), sending a clear signal of deepening security cooperation and a potential shift in regional allegiances.

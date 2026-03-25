@@ -5,6 +5,9 @@ date: 2026-03-23 07:00:42 +0000
 categories: [Geopolitics]
 author: "The World Today Editorial"
 excerpt: "A recent maritime collision between Chinese and Philippine vessels near Second Thomas Shoal in the disputed South China Sea has dramatically heightened regional tensions. This post analyzes the histor"
+image: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Ccollision%2Cspratlys%2Clitmus"
+image_thumb: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Ccollision%2Cspratlys%2Clitmus"
+
 ---
 Manila/Washington D.C. – March 23, 2026
 

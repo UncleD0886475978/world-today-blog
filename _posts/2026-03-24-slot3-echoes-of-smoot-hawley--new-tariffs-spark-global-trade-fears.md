@@ -5,6 +5,9 @@ date: 2026-03-24 19:03:48 +0000
 categories: [History & Analysis]
 author: "The World Today Editorial"
 excerpt: "As major economies announce new protectionist measures, concerns are rising that the world is repeating the trade errors of the 1930s. This analysis explores the current geopolitical climate driving t"
+image: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Cechoes%2Csmoot%2Chawley"
+image_thumb: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Cechoes%2Csmoot%2Chawley"
+
 ---
 
 March 24, 2026, Washington D.C. – The global economic landscape is once again gripped by anxieties reminiscent of a bygone era, as a wave of new protectionist trade policies threatens to unravel decades of economic integration. Today, the 'Strategic Industry Protection Act' passed by the United States Congress officially came into effect, imposing significant tariffs on a range of imported goods from several key trading partners, notably the European Union and certain Asian nations. Citing national security imperatives and the need to bolster domestic manufacturing in critical sectors like semiconductors and renewable energy, the move has already triggered swift condemnation and threats of retaliatory measures from affected countries. Analysts fear a cascading effect, where tit-for-tat tariffs could choke global trade, disrupt supply chains further, and potentially trigger an economic downturn.

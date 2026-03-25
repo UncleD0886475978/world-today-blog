@@ -5,6 +5,9 @@ date: 2026-03-23 13:02:06 +0000
 categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "A significant new offensive by Russian forces in Ukraine's eastern Donbas region has intensified fighting, drawing swift international condemnation and reigniting debates over military aid and diploma"
+image: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Crenewed%2Crussian%2Coffensive"
+image_thumb: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Crenewed%2Crussian%2Coffensive"
+
 ---
 Kyiv, Ukraine – March 23, 2026 – The fragile calm that had settled over parts of Ukraine's eastern front has been shattered by a major new offensive launched by Russian forces. Reports from military analysts and Ukrainian officials indicate a concerted push across multiple axes in the Donetsk region, targeting key strategic strongholds and threatening to unravel months of positional warfare. The escalation has immediately sent shockwaves across global capitals, reigniting fears of a prolonged and more brutal phase of the conflict.
 

@@ -5,6 +5,9 @@ date: 2026-03-22 19:03:53 +0000
 categories: [History & Analysis]
 author: "The World Today Editorial"
 excerpt: "A leading global economy's recent imposition of broad tariffs, justified by national security and domestic industry protection, has ignited fears of a retaliatory trade war. This development draws str"
+image: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Cechoes%2Ctariffs%2Cthreaten"
+image_thumb: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Cechoes%2Ctariffs%2Cthreaten"
+
 ---
 March 22, 2026, The World Today – The global economic landscape is once again gripped by uncertainty following the announcement of sweeping new tariffs by a major industrial power. Citing imperatives of national security, safeguarding domestic industries, and ensuring supply chain resilience, this leading economy has imposed significant duties on a wide array of imported goods, ranging from advanced technology components to agricultural products. The move has immediately sparked condemnation from international trade bodies and threats of reciprocal tariffs from affected nations, raising the specter of a full-blown global trade war. As policymakers and markets brace for potential fallout, the current climate evokes an uncomfortable historical parallel: the Smoot-Hawley Tariff Act of 1930.
 

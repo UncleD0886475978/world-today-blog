@@ -5,6 +5,9 @@ date: 2026-03-22 19:02:10 +0000
 categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "As the conflict in Ukraine enters its fifth year, a recent surge in fighting in eastern and southern regions has dramatically exacerbated an already dire humanitarian situation. Aid agencies are strug"
+image: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cukraine%2Chumanitarian%2Ccrisis"
+image_thumb: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cukraine%2Chumanitarian%2Ccrisis"
+
 ---
 Kyiv, Ukraine – March 22, 2026 – As the full-scale invasion of Ukraine marks its fourth anniversary and the conflict grinds into its fifth year, the humanitarian situation across the country, particularly in frontline regions, has reached a critical new low. A recent intensification of fighting in parts of the Donbas and southern oblasts has triggered a fresh wave of displacement and compounded the suffering of millions already reeling from years of war. International aid organizations report unprecedented challenges in providing life-saving assistance, warning of a looming catastrophe if sustained support and safer access are not urgently secured.
 

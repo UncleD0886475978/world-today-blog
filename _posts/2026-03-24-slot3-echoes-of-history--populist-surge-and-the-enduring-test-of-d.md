@@ -5,6 +5,9 @@ date: 2026-03-24 13:03:59 +0000
 categories: [History & Analysis]
 author: "The World Today Editorial"
 excerpt: "As a new wave of populist sentiment gains significant traction across Europe, particularly with the surging support for the 'National Renewal Front' in recent polls, observers are drawing stark parall"
+image: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Cechoes%2Chistory%2Cpopulist"
+image_thumb: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Cechoes%2Chistory%2Cpopulist"
+
 ---
 
 March 24, 2026, Global – The political landscape across Europe continues to shift dramatically, with recent polls indicating a significant surge in support for the 'National Renewal Front' in one of the continent's major democracies. Campaigning on a platform of economic nationalism, stringent immigration controls, and a complete overhaul of the existing political system, the party’s ascendance has sent ripples through established political circles, prompting urgent conversations about the state of liberal democracy and the lessons of history.

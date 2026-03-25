@@ -5,6 +5,9 @@ date: 2026-03-22 12:02:58 +0000
 categories: [History & Analysis]
 author: "The World Today Editorial"
 excerpt: "As global powers eye the rapidly thawing Arctic for its resources and strategic routes, a new era of geopolitical competition is emerging. This post draws parallels to the 19th-century 'Great Game,' e"
+image: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Carctic%2Cchill%2Cgreat"
+image_thumb: "https://source.unsplash.com/1200x630/?history%2Carchive%2Cnewspaper%2Cvintage%2Carctic%2Cchill%2Cgreat"
+
 ---
 BYLINE: The World Today Staff
 

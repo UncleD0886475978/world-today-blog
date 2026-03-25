@@ -5,6 +5,9 @@ date: 2026-03-22 12:01:12 +0000
 categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "As the conflict in Ukraine enters its third year, the front lines remain largely static, defined by attritional warfare and a grim human cost. This analysis from Kyiv on March 22, 2026, examines the p"
+image: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cukraine%2Cenduring%2Cstandoff"
+image_thumb: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cukraine%2Cenduring%2Cstandoff"
+
 ---
 Kyiv, March 22, 2026 – Over two years since the full-scale invasion, the conflict in Ukraine has settled into a grinding war of attrition, largely characterized by static front lines and intense, localized engagements. While the initial swift movements have long since ceased, the strategic implications and humanitarian costs continue to mount, profoundly reshaping the geopolitical landscape and testing the resolve of international alliances.
 

@@ -5,6 +5,9 @@ date: 2026-03-22 16:23:38 +0000
 categories: [Geopolitics]
 author: "The World Today Editorial"
 excerpt: "A proposed global peace summit for Ukraine, intended to forge a path out of the protracted conflict, is reportedly struggling to gain traction. With key belligerents and international powers setting p"
+image: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Celusive%2Cpeace%2Cukraine"
+image_thumb: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Celusive%2Cpeace%2Cukraine"
+
 ---
 GENEVA, March 22, 2026 – Two years and a month since the full-scale invasion of Ukraine, the prospect of a lasting peace remains as distant and complex as ever. A much-anticipated "Global Peace Summit for Ukraine," envisioned as a pivotal moment for international diplomacy, is reportedly facing significant headwinds even before its formal convocation. Sources close to the organizing committee in Geneva suggest that fundamental disagreements among key international players, coupled with entrenched positions from Kyiv and Moscow, are threatening to derail the initiative, highlighting the profound geopolitical chasm that continues to define the conflict.
 

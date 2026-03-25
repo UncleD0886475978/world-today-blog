@@ -5,6 +5,9 @@ date: 2026-03-24 07:00:33 +0000
 categories: [Geopolitics]
 author: "The World Today Editorial"
 excerpt: "An in-depth analysis of the intensifying global competition for critical minerals, essential for the green energy transition and advanced technologies. This piece explores how the race for these vital"
+image: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Cscramble%2Ccritical%2Cminerals"
+image_thumb: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Cscramble%2Ccritical%2Cminerals"
+
 ---
 
 March 24, 2026, Global Hubs – The global push towards decarbonization and the accelerating pace of technological innovation have inadvertently ignited a new, intense geopolitical competition: the race for critical minerals. From the lithium powering electric vehicles to the cobalt essential for high-performance batteries and the rare earths vital for advanced electronics and defense systems, these resources are no longer mere commodities but strategic assets. Their availability, or lack thereof, is increasingly dictating national security agendas, economic policies, and the formation of new international alliances, casting a long shadow over the mid-2020s geopolitical landscape.

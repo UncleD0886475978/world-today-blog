@@ -5,6 +5,9 @@ date: 2026-03-23 17:39:36 +0000
 categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "As the conflict in Ukraine enters its fifth year, the battlefield has solidified into heavily fortified lines, marked by intense drone warfare and long-range engagements. Diplomatic efforts remain lar"
+image: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cukraine%2Cconflict%2Cprotracted"
+image_thumb: "https://source.unsplash.com/1200x630/?military%2Cconflict%2Csecurity%2Cwar%2Cukraine%2Cconflict%2Cprotracted"
+
 ---
 
 KYIV, March 23, 2026 – The conflict in Ukraine, now in its fifth year, continues to be a defining geopolitical struggle of the mid-2020s. Despite numerous international mediation attempts and the sustained efforts of global powers, the front lines have largely solidified, characterized by a grinding war of attrition that shows little sign of immediate cessation. Recent developments underscore a protracted phase, where strategic endurance and technological adaptation are paramount, while the human cost and global ripple effects continue to mount.

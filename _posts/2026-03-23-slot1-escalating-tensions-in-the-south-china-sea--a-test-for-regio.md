@@ -5,6 +5,9 @@ date: 2026-03-23 13:00:22 +0000
 categories: [Geopolitics]
 author: "The World Today Editorial"
 excerpt: "An analysis of the recent naval confrontation in the South China Sea, examining the strategic implications of escalating territorial disputes between China and the Philippines, the role of internation"
+image: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Cescalating%2Ctensions%2Csouth"
+image_thumb: "https://source.unsplash.com/1200x630/?world%2Cmap%2Cgeopolitics%2Cdiplomacy%2Cescalating%2Ctensions%2Csouth"
+
 ---
 MANILA / WASHINGTON D.C. – March 23, 2026 – The South China Sea has once again become a focal point of international concern following a tense naval confrontation last week near the Second Thomas Shoal. The incident, involving Chinese Coast Guard vessels and a Philippine resupply mission, marks a significant escalation in the long-standing territorial dispute, raising alarms across Southeast Asia and beyond about the potential for miscalculation and wider regional instability.
 
