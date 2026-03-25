@@ -1,0 +1,26 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  terraform.tfvars — Your secret values
+#  KEEP THIS FILE PRIVATE. It is listed in .gitignore.
+#  Never commit this file to GitHub.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Google Gemini API key (from aistudio.google.com → API Keys)
+gemini_api_key = "AIzaSyA-mZbp42wN8acuAHDr6iCW6qKGHOCvqD0"
+
+# GitHub Personal Access Token
+github_token = "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"
+
+# Your GitHub username
+github_username = "UncleD0886475978"
+
+# Email used in git commit messages
+git_user_email = "skorkpor@gmail.com"
+
+# Absolute path to your project folder on your Red Hat machine
+project_dir = "/home/derick/world-today-blog"
+
+# Absolute path to your project folder on your Red Hat machine
+# This is where Dockerfile, generate_posts.py, etc. live
+# Optional overrides (defaults are fine for most users)
+# repo_name     = "world-today-blog"
+# git_user_name = "BlogBot"
