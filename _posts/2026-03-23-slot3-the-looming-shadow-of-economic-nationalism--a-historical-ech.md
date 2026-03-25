@@ -6,7 +6,6 @@ categories: [History & Analysis]
 author: "The World Today Editorial"
 excerpt: "As global trade tensions escalate in March 2026, driven by competition for critical resources and technological dominance, this analysis draws parallels to the protectionist spirals of the interwar pe"
 ---
-{% raw %}
 Monday, March 23, 2026
 
 The global economic landscape is once again shifting under the weight of escalating trade tensions and an increasingly assertive economic nationalism. Recent announcements, such as the 'Critical Minerals Sovereignty Act' passed by the North Atlantic Alliance and subsequent retaliatory tariffs from the East Asian Economic Bloc on advanced manufacturing components, signal a worrying fragmentation of the global trading system. The rhetoric of 'strategic autonomy' and 'supply chain resilience' has, for many observers, morphed into a zero-sum competition for essential resources and technological supremacy, raising specters of a bygone era.
@@ -24,4 +23,3 @@ The current climate bears an unsettling resemblance to the economic nationalism 
 While the historical parallels are striking, it's crucial to acknowledge the distinctions. Today's global economy is far more interconnected, with complex transnational supply chains and digital dependencies that were unimaginable in the 1930s. The existence of the World Trade Organization (WTO), despite its current challenges and reform debates, still provides a framework for dispute resolution, however imperfect. Moreover, the nature of the resources at stake has evolved from coal and steel to critical minerals and intellectual property, reflecting a shift from industrial might to technological leadership. The climate crisis also adds a unique layer of urgency, demanding global cooperation even as economic nationalism pulls nations apart.
 
 Nonetheless, the fundamental dangers of economic nationalism remain timeless. The belief that one nation's prosperity must come at the direct expense of another's, the weaponization of trade, and the erosion of multilateral institutions carry profound risks. Leaders today face the daunting task of balancing legitimate national security and economic resilience concerns with the imperative to maintain an open, rules-based global trading system. Failing to learn from the bitter lessons of the interwar period could lead to a future defined by slower economic growth, heightened geopolitical instability, and a diminished capacity to address shared global challenges.
-{% endraw %}

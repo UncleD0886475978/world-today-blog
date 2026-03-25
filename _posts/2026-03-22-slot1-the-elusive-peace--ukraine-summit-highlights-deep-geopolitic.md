@@ -6,7 +6,6 @@ categories: [Geopolitics]
 author: "The World Today Editorial"
 excerpt: "A proposed global peace summit for Ukraine, intended to forge a path out of the protracted conflict, is reportedly struggling to gain traction. With key belligerents and international powers setting p"
 ---
-{% raw %}
 GENEVA, March 22, 2026 – Two years and a month since the full-scale invasion of Ukraine, the prospect of a lasting peace remains as distant and complex as ever. A much-anticipated "Global Peace Summit for Ukraine," envisioned as a pivotal moment for international diplomacy, is reportedly facing significant headwinds even before its formal convocation. Sources close to the organizing committee in Geneva suggest that fundamental disagreements among key international players, coupled with entrenched positions from Kyiv and Moscow, are threatening to derail the initiative, highlighting the profound geopolitical chasm that continues to define the conflict.
 
 The summit, championed by a coalition of neutral European states and supported by the United Nations, aimed to bring together nations from across the globe to develop a framework for sustainable peace. However, the pre-summit discussions have laid bare the irreconcilable demands that have fueled the protracted war, leaving diplomats scrambling to find common ground where none currently appears to exist.
@@ -30,4 +29,3 @@ Beyond the diplomatic rhetoric, the domestic realities in both Ukraine and Russi
 For Western nations, the cost of supporting Ukraine, both economic and political, is a growing concern. Upcoming elections in key countries could shift political priorities, potentially impacting the level of future aid. The specter of "strategic fatigue" looms large, even as the commitment to Ukraine's sovereignty remains strong.
 
 The current struggle to convene a meaningful peace summit for Ukraine is a stark reminder of the intractable nature of this conflict. With fundamental principles clashing and no clear pathway to bridge the chasm between Kyiv and Moscow, the world faces the grim prospect of a protracted stalemate. The challenge for international diplomacy now is not merely to bring parties to the table, but to envision a future where core security interests can be balanced without sacrificing sovereign integrity – a task that, as of March 2026, appears dauntingly out of reach.
-{% endraw %}

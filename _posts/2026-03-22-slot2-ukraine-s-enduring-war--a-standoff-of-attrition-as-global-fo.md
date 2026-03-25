@@ -6,7 +6,6 @@ categories: [Conflict & Security]
 author: "The World Today Editorial"
 excerpt: "As the conflict in Ukraine enters its third year, the front lines remain largely static, defined by attritional warfare and a grim human cost. This analysis from Kyiv on March 22, 2026, examines the p"
 ---
-{% raw %}
 Kyiv, March 22, 2026 – Over two years since the full-scale invasion, the conflict in Ukraine has settled into a grinding war of attrition, largely characterized by static front lines and intense, localized engagements. While the initial swift movements have long since ceased, the strategic implications and humanitarian costs continue to mount, profoundly reshaping the geopolitical landscape and testing the resolve of international alliances.
 
 ## The Enduring Front Lines
@@ -24,4 +23,3 @@ The human cost of the war remains devastating. Millions of Ukrainians are intern
 ## Prospects for Peace: A Distant Horizon?
 
 Despite various diplomatic initiatives and back-channel efforts, a viable path to a lasting peace remains elusive. Both Kyiv and Moscow hold firm to maximalist demands, making direct negotiations fraught with obstacles. Ukraine insists on the full restoration of its territorial integrity, including Crimea, and accountability for war crimes, while Russia continues to demand recognition of its territorial gains and 'demilitarization.' The absence of a clear military victor, combined with deep-seated mistrust and irreconcilable political objectives, suggests that the conflict is more likely to continue in its current attritional form or transition into a 'frozen conflict' rather than reach a comprehensive peace agreement in the near term. The long-term implications for European security, international law, and the global balance of power will continue to unfold, demanding sustained attention and innovative diplomatic approaches from the international community.
-{% endraw %}
