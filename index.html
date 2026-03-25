@@ -39,5 +39,14 @@ title: The World Today
 <div class="posts-grid">{% for post in history_posts limit:6 %}<div class="card" style="--stripe-color:var(--r-history)"><div class="card-tag">History &amp; Analysis</div><h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3><p>{{ post.excerpt | strip_html | truncate: 110 }}</p><time>{{ post.date | date: "%B %d, %Y" }}</time></div>{% endfor %}</div></section>
 {% endif %}
 <section class="section-block"><div class="section-head"><div class="section-stripe" style="background:var(--ink4)"></div><h2>All Recent Stories</h2><a class="section-more" href="{{ site.baseurl }}/archive/">Full Archive →</a></div>
-<div class="posts-grid">{% for post in site.posts limit:12 %}{% assign pcat = post.categories[0] %}{% if pcat == "Politics" %}{% assign pc = "var(--r-politics)" %}{% elsif pcat == "Geopolitics" %}{% assign pc = "var(--r-geo)" %}{% elsif pcat == "Conflict & Security" %}{% assign pc = "var(--r-conflict)" %}{% elsif pcat == "Sports" %}{% assign pc = "var(--r-sports)" %}{% elsif pcat == "History & Analysis" %}{% assign pc = "var(--r-history)" %}{% else %}{% assign pc = "var(--ink4)" %}{% endif %}<div class="card" style="--stripe-color:{{ pc }}"><div class="card-tag">{{ pcat }}</div><h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3><p>{{ post.excerpt | strip_html | truncate: 100 }}</p><time>{{ post.date | date: "%B %d, %Y" }}</time></div>{% endfor %}</div></section>
+<div class="posts-grid">{% for post in site.posts limit:12 %}{% assign pcat = post.categories[0] %}{% if pcat == "Politics" %}{% assign pc = "var(--r-politics)" %}{% elsif pcat == "Geopolitics" %}{% assign pc = "var(--r-geo)" %}{% elsif pcat == "Conflict & Security" %}{% assign pc = "var(--r-conflict)" %}{% elsif pcat == "Sports" %}{% assign pc = "var(--r-sports)" %}{% elsif pcat == "History & Analysis" %}{% assign pc = "var(--r-history)" %}{% else %}{% assign pc = "var(--ink4)" %}{% endif %}{% if post.image %}<img class="card-img" src="{{ post.image }}" alt="{{ post.title }}">{% else %}<div class="no-img-placeholder">{{ pcat }}</div>{% endif %}<div class="card" style="--stripe-color:{{ pc }}"><div class="card-tag">{{ pcat }}</div><h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3><p>{{ post.excerpt | strip_html | truncate: 100 }}</p><time>{{ post.date | date: "%B %d, %Y" }}</time></div>{% endfor %}</div></section>
 </main>
+<script>
+// Lazy-load images with fade-in
+document.querySelectorAll('.card-img, .post-hero-img').forEach(img => {
+  img.style.opacity = '0';
+  img.style.transition = 'opacity 0.4s';
+  img.onload = () => img.style.opacity = '1';
+  if (img.complete) img.style.opacity = '1';
+});
+</script>
