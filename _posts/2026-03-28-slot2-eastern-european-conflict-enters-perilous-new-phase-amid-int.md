@@ -1,10 +1,16 @@
 ---
-layout: post
-title: "Eastern European Conflict Enters Perilous New Phase Amid Intensified Strikes and Stalled Diplomacy"
+author: The World Today Editorial
+categories:
+- Conflict & Security
 date: 2026-03-28 16:16:07 +0000
-categories: [Conflict & Security]
-author: "The World Today Editorial"
-excerpt: "The Eastern European conflict intensifies with a surge in aerial assaults and missile strikes, deepening the humanitarian crisis and further stalling diplomatic efforts. Both sides report new military"
+excerpt: The Eastern European conflict intensifies with a surge in aerial assaults
+  and missile strikes, deepening the humanitarian crisis and further stalling diplomatic
+  efforts. Both sides report new military
+image: https://source.unsplash.com/1200x630/?military,security,conflict,eastern,european,conflict
+image_thumb: https://source.unsplash.com/1200x630/?military,security,conflict,eastern,european,conflict
+layout: post
+title: Eastern European Conflict Enters Perilous New Phase Amid Intensified Strikes
+  and Stalled Diplomacy
 ---
 
 KYIV/MOSCOW/BRUSSELS – March 28, 2026

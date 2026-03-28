@@ -1,10 +1,15 @@
 ---
-layout: post
-title: "The Resurgence of Spheres: Geopolitical Tensions Echo Cold War Divisions"
+author: The World Today Editorial
+categories:
+- History & Analysis
 date: 2026-03-28 16:17:54 +0000
-categories: [History & Analysis]
-author: "The World Today Editorial"
-excerpt: "Analyzing the escalating tensions between Russia and the EU over a proposed 'Eastern Gateway' pact, this post draws parallels to Cold War-era struggles for influence, examining the historical concept "
+excerpt: 'Analyzing the escalating tensions between Russia and the EU over a proposed
+  ''Eastern Gateway'' pact, this post draws parallels to Cold War-era struggles for
+  influence, examining the historical concept '
+image: https://source.unsplash.com/1200x630/?history,newspaper,archive,resurgence,spheres,geopolitical
+image_thumb: https://source.unsplash.com/1200x630/?history,newspaper,archive,resurgence,spheres,geopolitical
+layout: post
+title: 'The Resurgence of Spheres: Geopolitical Tensions Echo Cold War Divisions'
 ---
 
 March 28, 2026, Global Desk

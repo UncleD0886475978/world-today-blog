@@ -1,10 +1,15 @@
 ---
-layout: post
-title: "Europe's Enduring Security Conundrum: A Continent Grapples with its Future"
+author: The World Today Editorial
+categories:
+- Geopolitics
 date: 2026-03-28 16:14:22 +0000
-categories: [Geopolitics]
-author: "The World Today Editorial"
-excerpt: "Three years after the full-scale invasion of Ukraine, Europe remains locked in a profound geopolitical struggle over its future security architecture. This analysis delves into the evolving European s"
+excerpt: Three years after the full-scale invasion of Ukraine, Europe remains locked
+  in a profound geopolitical struggle over its future security architecture. This
+  analysis delves into the evolving European s
+image: https://source.unsplash.com/1200x630/?world,diplomacy,geopolitics,europe,enduring,security
+image_thumb: https://source.unsplash.com/1200x630/?world,diplomacy,geopolitics,europe,enduring,security
+layout: post
+title: 'Europe''s Enduring Security Conundrum: A Continent Grapples with its Future'
 ---
 
 Brussels – March 28, 2026

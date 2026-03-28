@@ -1,10 +1,16 @@
 ---
-layout: post
-title: "From Global Integration to Fragmented Futures: Echoes of the Interwar Trade Wars"
+author: The World Today Editorial
+categories:
+- History & Analysis
 date: 2026-03-28 15:56:12 +0000
-categories: [History & Analysis]
-author: "The World Today Editorial"
-excerpt: "As global leaders grapple with calls for 'economic sovereignty' and 'strategic autonomy' amidst ongoing supply chain disruptions and geopolitical tensions, this analysis draws a critical parallel to t"
+excerpt: As global leaders grapple with calls for 'economic sovereignty' and 'strategic
+  autonomy' amidst ongoing supply chain disruptions and geopolitical tensions, this
+  analysis draws a critical parallel to t
+image: https://source.unsplash.com/1200x630/?history,newspaper,archive,global,integration,fragmented
+image_thumb: https://source.unsplash.com/1200x630/?history,newspaper,archive,global,integration,fragmented
+layout: post
+title: 'From Global Integration to Fragmented Futures: Echoes of the Interwar Trade
+  Wars'
 ---
 
 Geneva, March 28, 2026 – The halls of international diplomacy are once again alive with intense debate, as leaders at the ongoing World Economic Forum special session in Geneva confront a growing chorus of calls for 'economic sovereignty' and 'strategic autonomy.' Discussions, spurred by persistent supply chain vulnerabilities, technological rivalry, and heightened geopolitical friction, signal a potential turning point away from decades of accelerating globalization. While the imperative for resilience and security is undeniable, the rhetoric around decoupling and protectionism carries a distinct and unsettling echo from the pages of history.
