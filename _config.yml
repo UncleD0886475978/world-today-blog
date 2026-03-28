@@ -21,3 +21,21 @@ defaults:
       path: "_pages"
     values:
       layout: default
+
+header_pages:
+  - _pages/region-africa.md
+  - _pages/region-europe.md
+  - _pages/region-asia.md
+  - _pages/region-americas.md
+  - _pages/region-middle-east.md
+  - _pages/sports.md
+  - _pages/african-culture.md
+
+header_pages:
+  - _pages/region-africa.md
+  - _pages/region-europe.md
+  - _pages/region-asia.md
+  - _pages/region-americas.md
+  - _pages/region-middle-east.md
+  - _pages/sports.md
+  - _pages/african-culture.md
