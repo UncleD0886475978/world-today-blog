@@ -1,10 +1,16 @@
 ---
-layout: post
-title: "Red Sea Tensions Escalate: International Coalition Confronts Sophisticated Maritime Threats"
+author: The World Today Editorial
+categories:
+- Conflict & Security
 date: 2026-03-28 15:53:15 +0000
-categories: [Conflict & Security]
-author: "The World Today Editorial"
-excerpt: "Maritime security in the Red Sea has reached a critical juncture following a series of advanced attacks on commercial shipping, prompting a more assertive stance from the international coalition. The "
+excerpt: 'Maritime security in the Red Sea has reached a critical juncture following
+  a series of advanced attacks on commercial shipping, prompting a more assertive
+  stance from the international coalition. The '
+image: https://source.unsplash.com/1200x630/?military,security,conflict,tensions,escalate,international
+image_thumb: https://source.unsplash.com/1200x630/?military,security,conflict,tensions,escalate,international
+layout: post
+title: 'Red Sea Tensions Escalate: International Coalition Confronts Sophisticated
+  Maritime Threats'
 ---
 
 MARRAKECH, Morocco – March 28, 2026 – The vital shipping lanes of the Red Sea are once again at the epicenter of a dangerous geopolitical standoff, as an international naval coalition confronts increasingly sophisticated attacks on commercial vessels. After months of heightened alert and intermittent engagements, the situation has dramatically intensified, signaling a new and perilous phase in maritime security for one of the world's busiest waterways.

@@ -1,10 +1,15 @@
 ---
-layout: post
-title: "Drone Swarms Redefine Eastern Front as Ukraine Pushes Back in Key Sectors"
+author: The World Today Editorial
+categories:
+- Conflict & Security
 date: 2026-03-28 15:54:31 +0000
-categories: [Conflict & Security]
-author: "The World Today Editorial"
-excerpt: "As the conflict in Eastern Europe enters a new phase, advanced drone swarm technology is fundamentally altering battlefield dynamics. Ukrainian forces, leveraging sophisticated Western AI-integrated s"
+excerpt: As the conflict in Eastern Europe enters a new phase, advanced drone swarm
+  technology is fundamentally altering battlefield dynamics. Ukrainian forces, leveraging
+  sophisticated Western AI-integrated s
+image: https://source.unsplash.com/1200x630/?military,security,conflict,drone,swarms,redefine
+image_thumb: https://source.unsplash.com/1200x630/?military,security,conflict,drone,swarms,redefine
+layout: post
+title: Drone Swarms Redefine Eastern Front as Ukraine Pushes Back in Key Sectors
 ---
 
 KYIV, March 28, 2026 – The protracted conflict in Eastern Europe has entered a new, technologically intense phase, with military analysts pointing to the widespread deployment of advanced drone swarm technology as a game-changer on the eastern front. Ukrainian forces, reportedly bolstered by a fresh influx of sophisticated Western-developed, AI-integrated drone systems, have initiated a series of localized counter-offensives, achieving notable tactical gains in sectors previously characterized by entrenched stalemate.

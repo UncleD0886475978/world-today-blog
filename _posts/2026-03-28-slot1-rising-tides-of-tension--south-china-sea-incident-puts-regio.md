@@ -1,10 +1,16 @@
 ---
-layout: post
-title: "Rising Tides of Tension: South China Sea Incident Puts Regional Stability on Edge"
+author: The World Today Editorial
+categories:
+- Geopolitics
 date: 2026-03-28 15:52:46 +0000
-categories: [Geopolitics]
-author: "The World Today Editorial"
-excerpt: "A recent high-seas confrontation in the South China Sea has reignited concerns over escalating tensions in one of the world's most vital waterways. This deep-dive analysis explores the latest incident"
+excerpt: A recent high-seas confrontation in the South China Sea has reignited concerns
+  over escalating tensions in one of the world's most vital waterways. This deep-dive
+  analysis explores the latest incident
+image: https://source.unsplash.com/1200x630/?world,diplomacy,geopolitics,rising,tides,tension
+image_thumb: https://source.unsplash.com/1200x630/?world,diplomacy,geopolitics,rising,tides,tension
+layout: post
+title: 'Rising Tides of Tension: South China Sea Incident Puts Regional Stability
+  on Edge'
 ---
 
 March 28, 2026, Washington D.C. – The waters of the South China Sea, long a crucible of geopolitical friction, have once again become the focal point of international concern following a serious maritime confrontation earlier this week. The incident, involving vessels from the Philippines and China near the contested Second Thomas Shoal, has amplified calls for de-escalation and underscored the urgent need for robust diplomatic frameworks in a region critical to global commerce and security.

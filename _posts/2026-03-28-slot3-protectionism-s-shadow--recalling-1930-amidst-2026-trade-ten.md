@@ -1,10 +1,15 @@
 ---
-layout: post
-title: "Protectionism's Shadow: Recalling 1930 Amidst 2026 Trade Tensions"
+author: The World Today Editorial
+categories:
+- History & Analysis
 date: 2026-03-28 15:55:02 +0000
-categories: [History & Analysis]
-author: "The World Today Editorial"
-excerpt: "As major economies move towards increased protectionist measures in critical sectors, concerns are rising that the world is repeating mistakes of the past. This analysis draws parallels between the cu"
+excerpt: As major economies move towards increased protectionist measures in critical
+  sectors, concerns are rising that the world is repeating mistakes of the past. This
+  analysis draws parallels between the cu
+image: https://source.unsplash.com/1200x630/?history,newspaper,archive,protectionism,shadow,recalling
+image_thumb: https://source.unsplash.com/1200x630/?history,newspaper,archive,protectionism,shadow,recalling
+layout: post
+title: 'Protectionism''s Shadow: Recalling 1930 Amidst 2026 Trade Tensions'
 ---
 
 Saturday, March 28, 2026, Geneva – The global economic landscape is once again grappling with the specter of protectionism, as a major economic bloc, the Trans-Atlantic Economic Partnership (TAEP), this week announced a sweeping package of tariffs and subsidies designed to bolster its domestic advanced manufacturing sector. Citing national security imperatives and the need to secure critical supply chains in artificial intelligence components and green energy technologies, the TAEP’s move has triggered immediate condemnation and threats of retaliatory measures from key trading partners, including the Pacific Rim Economic Community (PREC) and the Global South Alliance. The escalating rhetoric has prompted economists and historians alike to draw unsettling parallels to a pivotal moment in the 20th century: the passage of the Smoot-Hawley Tariff Act of 1930.
