@@ -1,10 +1,15 @@
 ---
-layout: post
-title: "AI-Enhanced Drone Warfare Intensifies on Eastern Front, Reshaping Modern Combat"
+author: The World Today Editorial
+categories:
+- Conflict & Security
 date: 2026-03-28 16:22:24 +0000
-categories: [Conflict & Security]
-author: "The World Today Editorial"
-excerpt: "As the conflict in Eastern Europe enters its third year, a new phase of warfare driven by advanced, AI-enhanced drone technology is profoundly reshaping the battlefield. Recent analyses highlight the "
+excerpt: 'As the conflict in Eastern Europe enters its third year, a new phase of
+  warfare driven by advanced, AI-enhanced drone technology is profoundly reshaping
+  the battlefield. Recent analyses highlight the '
+image: https://source.unsplash.com/1200x630/?military,security,conflict,enhanced,drone,warfare
+image_thumb: https://source.unsplash.com/1200x630/?military,security,conflict,enhanced,drone,warfare
+layout: post
+title: AI-Enhanced Drone Warfare Intensifies on Eastern Front, Reshaping Modern Combat
 ---
 
 Kyiv/Brussels, March 28, 2026 — The protracted conflict in Eastern Europe has entered a new, highly technological phase, marked by the widespread deployment and increasing sophistication of AI-enhanced unmanned aerial vehicles (UAVs). Recent intelligence assessments and frontline reports indicate that these autonomous and semi-autonomous systems are no longer merely reconnaissance tools but have become pivotal in offensive operations, target acquisition, and even direct engagement, fundamentally altering the dynamics of ground combat.

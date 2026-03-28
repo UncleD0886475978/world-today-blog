@@ -1,10 +1,15 @@
 ---
-layout: post
-title: "Echoes of Empire: South China Sea Tensions and the Peril of Spheres of Influence"
+author: The World Today Editorial
+categories:
+- History & Analysis
 date: 2026-03-28 16:24:12 +0000
-categories: [History & Analysis]
-author: "The World Today Editorial"
-excerpt: "As tensions escalate in the South China Sea with increased assertive actions and counter-responses, this analysis draws parallels to the 19th-century 'Scramble for Africa.' Examining the historical co"
+excerpt: As tensions escalate in the South China Sea with increased assertive actions
+  and counter-responses, this analysis draws parallels to the 19th-century 'Scramble
+  for Africa.' Examining the historical co
+image: https://source.unsplash.com/1200x630/?history,newspaper,archive,echoes,empire,south
+image_thumb: https://source.unsplash.com/1200x630/?history,newspaper,archive,echoes,empire,south
+layout: post
+title: 'Echoes of Empire: South China Sea Tensions and the Peril of Spheres of Influence'
 ---
 
 *Dateline: March 28, 2026, Singapore*

@@ -1,10 +1,15 @@
 ---
-layout: post
-title: "Escalating Tensions in South China Sea: A Deep Dive into the Maritime Standoff"
+author: The World Today Editorial
+categories:
+- Geopolitics
 date: 2026-03-28 16:20:44 +0000
-categories: [Geopolitics]
-author: "The World Today Editorial"
-excerpt: "An analysis of the recent maritime incident in the South China Sea, exploring the historical context of territorial disputes, the reactions of regional actors and alliances, and the intricate dynamics"
+excerpt: An analysis of the recent maritime incident in the South China Sea, exploring
+  the historical context of territorial disputes, the reactions of regional actors
+  and alliances, and the intricate dynamics
+image: https://source.unsplash.com/1200x630/?world,diplomacy,geopolitics,escalating,tensions,south
+image_thumb: https://source.unsplash.com/1200x630/?world,diplomacy,geopolitics,escalating,tensions,south
+layout: post
+title: 'Escalating Tensions in South China Sea: A Deep Dive into the Maritime Standoff'
 ---
 
 International Desk, March 28, 2026
