@@ -24,8 +24,77 @@ AFRICAN_COUNTRIES = [
     "Mauritius","Eswatini","Djibouti","Comoros","Cape Verde","Sao Tome and Principe","Seychelles"
 ]
 
+# 190+ top-flight domestic leagues and thousands of teams
+SOCCER_LEAGUES = [
+    # Europe - Big 5
+    {"league": "Premier League",      "country": "England",     "teams": "Arsenal, Aston Villa, Chelsea, Liverpool, Manchester City, Manchester United, Newcastle, Tottenham, West Ham"},
+    {"league": "La Liga",             "country": "Spain",       "teams": "Athletic Bilbao, Atletico Madrid, Barcelona, Real Madrid, Real Sociedad, Sevilla, Valencia, Villarreal"},
+    {"league": "Bundesliga",          "country": "Germany",     "teams": "Bayer Leverkusen, Bayern Munich, Borussia Dortmund, Borussia Monchengladbach, Eintracht Frankfurt, RB Leipzig, VfB Stuttgart"},
+    {"league": "Serie A",             "country": "Italy",       "teams": "AC Milan, Atalanta, AS Roma, Inter Milan, Juventus, Lazio, Napoli, Torino"},
+    {"league": "Ligue 1",             "country": "France",      "teams": "AS Monaco, Lille, Lyon, Marseille, Paris Saint-Germain, Rennes, Toulouse"},
+    # Europe - Other
+    {"league": "Primeira Liga",       "country": "Portugal",    "teams": "Benfica, Braga, Porto, Sporting CP"},
+    {"league": "Eredivisie",          "country": "Netherlands", "teams": "Ajax, AZ Alkmaar, Feyenoord, PSV Eindhoven"},
+    {"league": "Super Lig",           "country": "Turkey",      "teams": "Besiktas, Fenerbahce, Galatasaray, Trabzonspor"},
+    {"league": "Scottish Premiership","country": "Scotland",    "teams": "Celtic FC, Hearts, Rangers FC, Hibernian"},
+    {"league": "Pro League",          "country": "Belgium",     "teams": "Anderlecht, Bruges, Gent, Standard Liege"},
+    {"league": "Super League",        "country": "Greece",      "teams": "AEK Athens, Olympiacos, Panathinaikos, PAOK"},
+    {"league": "Premiership",         "country": "Ukraine",     "teams": "Dynamo Kyiv, Shakhtar Donetsk"},
+    {"league": "Allsvenskan",         "country": "Sweden",      "teams": "Djurgarden, Hammarby, Malmo FF"},
+    {"league": "Eliteserien",         "country": "Norway",      "teams": "Bodo/Glimt, Brann, Molde, Rosenborg"},
+    {"league": "Superliga",           "country": "Denmark",     "teams": "Brondby, Copenhagen, Midtjylland"},
+    {"league": "Super League",        "country": "Switzerland", "teams": "Basel, Servette, Young Boys, Zurich"},
+    {"league": "Bundesliga",          "country": "Austria",     "teams": "LASK, RB Salzburg, Rapid Vienna, Sturm Graz"},
+    {"league": "Czech First League",  "country": "Czech Republic", "teams": "AC Sparta Prague, Slavia Prague, Viktoria Plzen"},
+    {"league": "Ekstraklasa",         "country": "Poland",      "teams": "Lech Poznan, Legia Warsaw, Rakow Czestochowa"},
+    {"league": "Nemzeti Bajnokság",   "country": "Hungary",     "teams": "Ferencvaros, MTK Budapest"},
+    {"league": "Liga I",              "country": "Romania",     "teams": "CFR Cluj, FCSB, Universitatea Craiova"},
+    {"league": "Srpska Liga",         "country": "Serbia",      "teams": "Partizan Belgrade, Red Star Belgrade"},
+    {"league": "HNL",                 "country": "Croatia",     "teams": "Dinamo Zagreb, Hajduk Split"},
+    # Americas
+    {"league": "MLS",                 "country": "USA/Canada",  "teams": "Atlanta United, Columbus Crew, Inter Miami, LA Galaxy, LAFC, New York City FC, Seattle Sounders, Toronto FC"},
+    {"league": "Liga MX",             "country": "Mexico",      "teams": "Club America, Cruz Azul, Monterrey, Pumas UNAM, Santos Laguna, Tigres UANL"},
+    {"league": "Serie A",             "country": "Brazil",      "teams": "Atletico Mineiro, Corinthians, Flamengo, Fluminense, Palmeiras, Sao Paulo, Vasco da Gama"},
+    {"league": "Liga Profesional",    "country": "Argentina",   "teams": "Boca Juniors, Independiente, Racing Club, River Plate, San Lorenzo"},
+    {"league": "Primera Division",    "country": "Chile",       "teams": "Colo-Colo, Universidad Catolica, Universidad de Chile"},
+    {"league": "Primera Division",    "country": "Colombia",    "teams": "Atletico Nacional, Independiente Medellin, Millonarios, Santa Fe"},
+    {"league": "Primera Division",    "country": "Uruguay",     "teams": "Nacional, Penarol"},
+    {"league": "Primera Division",    "country": "Peru",        "teams": "Alianza Lima, Universitario de Deportes"},
+    {"league": "LigaPro",             "country": "Ecuador",     "teams": "Barcelona SC, Emelec, Liga de Quito"},
+    # Asia
+    {"league": "Pro League",          "country": "Saudi Arabia","teams": "Al-Ahli, Al-Hilal, Al-Ittihad, Al-Nassr"},
+    {"league": "J1 League",           "country": "Japan",       "teams": "Gamba Osaka, Kawasaki Frontale, Urawa Red Diamonds, Yokohama F. Marinos"},
+    {"league": "K League 1",          "country": "South Korea", "teams": "Jeonbuk Hyundai, Ulsan Hyundai, Seongnam FC"},
+    {"league": "Chinese Super League","country": "China",       "teams": "Beijing Guoan, Shandong Taishan, Shanghai Port"},
+    {"league": "A-League",            "country": "Australia",   "teams": "Melbourne City, Melbourne Victory, Sydney FC, Western Sydney Wanderers"},
+    {"league": "UAE Pro League",       "country": "UAE",         "teams": "Al Ain, Al Jazira, Al Wahda, Shabab Al Ahli"},
+    {"league": "Qatar Stars League",  "country": "Qatar",       "teams": "Al Duhail, Al Rayyan, Al Sadd"},
+    {"league": "Persian Gulf Pro League", "country": "Iran",    "teams": "Esteghlal, Persepolis, Sepahan"},
+    {"league": "Super Lig",           "country": "Israel",      "teams": "Hapoel Tel Aviv, Maccabi Haifa, Maccabi Tel Aviv"},
+    # Africa
+    {"league": "Premier Soccer League","country": "South Africa","teams": "Kaizer Chiefs, Mamelodi Sundowns, Orlando Pirates"},
+    {"league": "Premier League",      "country": "Egypt",       "teams": "Al Ahly, Zamalek, Pyramids FC"},
+    {"league": "Botola Pro",          "country": "Morocco",     "teams": "Raja Casablanca, Wydad Casablanca"},
+    {"league": "Ligue Professionnelle 1", "country": "Tunisia", "teams": "Club Africain, Espérance Sportive de Tunis, US Monastir"},
+    {"league": "Ligue 1",             "country": "Algeria",     "teams": "MC Alger, USM Alger, CR Belouizdad"},
+    {"league": "Premier League",      "country": "Nigeria",     "teams": "Enyimba, Kano Pillars, Rivers United"},
+    {"league": "Premier League",      "country": "Ghana",       "teams": "Asante Kotoko, Hearts of Oak"},
+    {"league": "Premier League",      "country": "Kenya",       "teams": "AFC Leopards, Gor Mahia, Tusker FC"},
+    # Women's Leagues
+    {"league": "NWSL",                "country": "USA",         "teams": "Chicago Red Stars, Houston Dash, OL Reign, Portland Thorns, NJ/NY Gotham"},
+    {"league": "WSL",                 "country": "England",     "teams": "Arsenal Women, Chelsea Women, Liverpool Women, Manchester City Women"},
+    {"league": "Liga F",              "country": "Spain",       "teams": "Atletico Madrid Femenino, Barcelona Femeni, Real Madrid Femenino"},
+    {"league": "WE League",           "country": "Japan",       "teams": "INAC Kobe Leonessa, Mynavi Sendai, Urawa Red Diamonds Ladies"},
+    # Continental Competitions
+    {"league": "UEFA Champions League",   "country": "Europe",       "teams": "Top clubs from all European leagues competing for the premier club trophy"},
+    {"league": "UEFA Europa League",      "country": "Europe",       "teams": "Second-tier European club competition with clubs from all UEFA nations"},
+    {"league": "Copa Libertadores",       "country": "South America","teams": "Top clubs from Brazil, Argentina, Colombia, Chile, Uruguay, Ecuador, Peru"},
+    {"league": "CONCACAF Champions Cup",  "country": "CONCACAF",     "teams": "Top clubs from MLS, Liga MX, and Central American leagues"},
+    {"league": "AFC Champions League",    "country": "Asia",         "teams": "Top clubs from Saudi Arabia, Japan, South Korea, China, Australia"},
+    {"league": "CAF Champions League",    "country": "Africa",       "teams": "Al Ahly, Wydad, Mamelodi Sundowns, TP Mazembe, Espérance"},
+]
+
 SPORTS_TOPICS = [
-    {"focus": "Latest soccer/football results, transfers, or major league developments worldwide", "category": "Sports - Soccer"},
     {"focus": "Basketball news: NBA, FIBA, EuroLeague, or international basketball developments", "category": "Sports - Basketball"},
     {"focus": "CAF Champions League, AFCON qualifiers, or African football developments", "category": "Sports - CAF/AFCON"},
     {"focus": "UEFA Champions League, Europa League, or major European football cup news", "category": "Sports - Champions League"},
@@ -82,6 +151,11 @@ def get_today_african_country():
 def get_today_sport():
     day = datetime.date.today().timetuple().tm_yday
     return SPORTS_TOPICS[day % len(SPORTS_TOPICS)]
+
+def get_today_soccer_league():
+    """Rotate through all 50+ soccer leagues daily for varied coverage."""
+    day = datetime.date.today().timetuple().tm_yday
+    return SOCCER_LEAGUES[day % len(SOCCER_LEAGUES)]
 
 def get_today_crime():
     day = datetime.date.today().timetuple().tm_yday
@@ -273,8 +347,22 @@ def main():
     for t in ALL_TOPICS:
         topic = t.copy()
         if topic["slot"] == 7:
-            topic["focus"] = sport["focus"]
-            topic["category"] = sport["category"]
+            # Every other day: soccer league story vs other sports
+            day = datetime.date.today().timetuple().tm_yday
+            if day % 2 == 0:
+                league = get_today_soccer_league()
+                topic["focus"] = (
+                    f"Cover the latest news, results, transfers, injuries, or standings from "
+                    f"the {league['league']} ({league['country']}). "
+                    f"Key teams include: {league['teams']}. "
+                    f"Focus on the most current and newsworthy story from this league."
+                )
+                topic["category"] = "Sports - Soccer"
+                topic["region"] = f"Sports - {league['league']} ({league['country']})"
+            else:
+                sport = get_today_sport()
+                topic["focus"] = sport["focus"]
+                topic["category"] = sport["category"]
         elif topic["slot"] == 8:
             topic["focus"] = (
                 f"Celebrate and explore the culture of {country}: food, traditional dress, "
