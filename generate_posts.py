@@ -33,6 +33,16 @@ SPORTS_TOPICS = [
     {"focus": "Club team news: transfers, injuries, manager changes, or match analysis", "category": "Sports - Club Teams"},
 ]
 
+CRIME_TOPICS = [
+    {"continent": "Africa",        "focus": "A major organized crime, cartel, corruption, cybercrime, murder, or drug trafficking story from Africa"},
+    {"continent": "Europe",        "focus": "A major organized crime, mafia, cybercrime, political corruption, or high-profile criminal case from Europe"},
+    {"continent": "Asia",          "focus": "A major organized crime, drug trafficking, cybercrime, corruption, or high-profile criminal case from Asia"},
+    {"continent": "North America", "focus": "A major cartel, gang crime, cybercrime, white-collar fraud, murder, or political corruption story from North America"},
+    {"continent": "South America", "focus": "A major cartel, organized crime, political corruption, drug trafficking, or high-profile criminal case from South America"},
+    {"continent": "Middle East",   "focus": "A major organized crime, smuggling, cybercrime, corruption, or high-profile criminal case from the Middle East"},
+    {"continent": "Oceania",       "focus": "A major organized crime, cybercrime, drug trafficking, corruption, or high-profile criminal case from Australia or Oceania"},
+]
+
 # All 8 topic slots — rotated 3 per run across the day
 ALL_TOPICS = [
     {"slot": 1, "region": "Africa",              "focus": "A major current political, economic, or social development in Africa",                         "category": "Africa"},
@@ -43,6 +53,7 @@ ALL_TOPICS = [
     {"slot": 6, "region": "Middle East",         "focus": "A significant current conflict, diplomatic, or political development in the Middle East",      "category": "Middle East"},
     {"slot": 7, "region": "Sports",              "focus": "", "category": ""},
     {"slot": 8, "region": "African Culture",     "focus": "", "category": "African Culture"},
+    {"slot": 9, "region": "Crime & Justice",     "focus": "", "category": "Crime & Justice"},
 ]
 
 SYSTEM_PROMPT = """You are a senior journalist writing for 'The World Today' blog.
@@ -62,7 +73,7 @@ def get_run_slot():
     elif hour < 19:
         return [3, 4, 5]   # 13:00 run: North America, South America, Middle East
     else:
-        return [6, 7]   # 19:00 run: Sports + African Culture (slot 8 uses index 7)
+        return [6, 7, 8]   # 19:00 run: Sports + African Culture + Crime & Justice (slot 8 uses index 7)
 
 def get_today_african_country():
     day = datetime.date.today().timetuple().tm_yday
@@ -71,6 +82,10 @@ def get_today_african_country():
 def get_today_sport():
     day = datetime.date.today().timetuple().tm_yday
     return SPORTS_TOPICS[day % len(SPORTS_TOPICS)]
+
+def get_today_crime():
+    day = datetime.date.today().timetuple().tm_yday
+    return CRIME_TOPICS[day % len(CRIME_TOPICS)]
 
 def post_already_exists(slot, date):
     posts_dir = os.path.join(BLOG_REPO_DIR, POSTS_OUTPUT_DIR)
@@ -266,6 +281,10 @@ def main():
                 f"lifestyle, music, art, festivals, or daily life. Make it vivid, respectful, and educational."
             )
             topic["region"] = f"African Culture - {country}"
+        elif topic["slot"] == 9:
+            crime = get_today_crime()
+            topic["focus"] = crime["focus"]
+            topic["region"] = f"Crime & Justice - {crime['continent']}"
         topics.append(topic)
 
     # Pick 3 topics for this run based on time of day
