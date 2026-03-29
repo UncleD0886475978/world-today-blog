@@ -115,7 +115,6 @@ Return ONLY valid JSON with keys: title, category, summary, content."""
     payload = {
         "system_instruction": {"parts": [{"text": SYSTEM_PROMPT}]},
         "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
-        "tools": [{"google_search": {}}],
         "generationConfig": {"temperature": 0.7, "maxOutputTokens": 4000}
     }
     data = call_gemini(payload)
