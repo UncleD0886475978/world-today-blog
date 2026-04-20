@@ -335,6 +335,7 @@ def share_to_social(title, summary, date):
     post_to_facebook(summary, url)
     post_to_threads(summary, url)
     post_to_twitter(summary, url)
+    publish_to_ghost_post(title, summary, date)
 
 def main():
     today = datetime.date.today()
@@ -406,3 +407,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def publish_to_ghost_post(title, summary, date):
+    try:
+        from ghost_publish import publish_to_ghost
+        publish_to_ghost(title, summary, title, "News", visibility="paid")
+        print("    Ghost: published successfully")
+    except Exception as e:
+        print(f"    Ghost error: {e}")
